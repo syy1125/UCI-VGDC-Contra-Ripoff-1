@@ -248,7 +248,12 @@ Prefab:
     - target: {fileID: 114274274156847596, guid: 8e0762839b0aa80419a666c22c8f799d,
         type: 2}
       propertyPath: jumpForce
-      value: 30
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114274274156847596, guid: 8e0762839b0aa80419a666c22c8f799d,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50466135096816722, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}

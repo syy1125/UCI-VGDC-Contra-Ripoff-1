@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 	private Rigidbody2D rb;
 
-	public int jumpForce = 300;
+	public int jumpForce = 150;
+	public int movementSpeed = 5;
 
 	void Start () 
 	{
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
 
-		rb.velocity = new Vector2(moveHorizontal, rb.velocity.y);
+		rb.velocity = new Vector2(moveHorizontal * movementSpeed, rb.velocity.y);
 
 		if (Input.GetButtonDown ("Jump"))
 			this.rb.AddForce ( new Vector2(0,jumpForce));
