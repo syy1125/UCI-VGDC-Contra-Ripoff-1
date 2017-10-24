@@ -6,6 +6,13 @@ public class HealthHUD : MonoBehaviour
 	public GameObject HealthCellPrefab;
 	public Color HealthyColor = Color.red;
 	public Color DepletedColor = Color.gray;
+	/// <summary>
+	/// Where the health cells start. The components are a multiplier for the cell's width and height.
+	/// </summary>
+	public Vector2 CellStart = new Vector2(0.5f,0.5f);
+	/// <summary>
+	/// What direction the health cells will stretch out.The components are a multiplier for the cell's width and height.
+	/// </summary>
 	public Vector2 CellDirection = Vector2.right;
 
 	public int MaxHealth;
@@ -61,8 +68,8 @@ public class HealthHUD : MonoBehaviour
 		float cellHeight = healthCell.GetComponent<RectTransform>().rect.width;
 
 		healthCell.transform.position = new Vector3(
-			(index * CellDirection.x + 0.5f) * cellWidth,
-			(index * CellDirection.y + 0.5f) * cellHeight,
+			(index * CellDirection.x + CellStart.x) * cellWidth,
+			(index * CellDirection.y + CellStart.y) * cellHeight,
 			cellPosition.z
 		);
 
