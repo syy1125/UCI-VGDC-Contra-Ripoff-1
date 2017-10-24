@@ -536,6 +536,7 @@ MonoBehaviour:
     type: 2}
   HealthyColor: {r: 1, g: 0, b: 0, a: 1}
   DepletedColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
+  CellDirection: {x: 1, y: 0}
   MaxHealth: 5
 --- !u!1 &2082183080 stripped
 GameObject:

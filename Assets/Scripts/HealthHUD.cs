@@ -6,6 +6,7 @@ public class HealthHUD : MonoBehaviour
 	public GameObject HealthCellPrefab;
 	public Color HealthyColor = Color.red;
 	public Color DepletedColor = Color.gray;
+	public Vector2 CellDirection = Vector2.right;
 
 	public int MaxHealth;
 
@@ -57,9 +58,11 @@ public class HealthHUD : MonoBehaviour
 		// Position the cell correctly
 		Vector3 cellPosition = healthCell.transform.position;
 		float cellWidth = healthCell.GetComponent<RectTransform>().rect.width;
+		float cellHeight = healthCell.GetComponent<RectTransform>().rect.width;
+
 		healthCell.transform.position = new Vector3(
-			(index + 0.5f) * cellWidth,
-			cellPosition.y,
+			(index * CellDirection.x + 0.5f) * cellWidth,
+			(index * CellDirection.y + 0.5f) * cellHeight,
 			cellPosition.z
 		);
 
