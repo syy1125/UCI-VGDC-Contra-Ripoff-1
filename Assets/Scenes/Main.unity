@@ -203,6 +203,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1248952200421238, guid: 35ec0a4440139ee4395af9b7979cfca9, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35ec0a4440139ee4395af9b7979cfca9, type: 2}
   m_IsPrefabParent: 0
@@ -215,7 +219,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4238668706006566, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.697
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4238668706006566, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -248,7 +252,7 @@ Prefab:
     - target: {fileID: 114274274156847596, guid: 8e0762839b0aa80419a666c22c8f799d,
         type: 2}
       propertyPath: jumpForce
-      value: 150
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 114274274156847596, guid: 8e0762839b0aa80419a666c22c8f799d,
         type: 2}

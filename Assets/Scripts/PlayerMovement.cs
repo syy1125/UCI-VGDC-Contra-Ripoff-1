@@ -39,14 +39,12 @@ public class PlayerMovement : MonoBehaviour
 		else
 			return;
 		Jump ();
-
-		
 	}
 
 	void Jump()
 	{
 		rb.velocity = new Vector2(rb.velocity.x, 0);
-		rb.AddForce ( new Vector2(0,jumpForce));
+		rb.AddForce ( new Vector2(0, jumpForce));
 	}
 
 	bool isGrounded()
