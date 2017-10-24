@@ -34,7 +34,7 @@ public class HealthHUD : MonoBehaviour
 		// Remove all children
 		foreach (Transform child in transform)
 		{
-			Destroy(child);
+			Destroy(child.gameObject);
 		}
 
 		int index = 0;
