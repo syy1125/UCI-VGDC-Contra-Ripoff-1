@@ -1,36 +1,45 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PlayerHealth : MonoBehaviour {
+[Serializable]
+public class HealthChangeEvent : UnityEvent<int>
+{
+}
 
-	public int baseHealth = 3;   // made this public so it can be modified by the inspector tab.
+public class PlayerHealth : MonoBehaviour
+{
+	public int baseHealth = 3; // made this public so it can be modified by the inspector tab.
 
-	private int health;
+	public HealthChangeEvent OnHealthChange;
+
+	private int _health;
+
+	public int Health
+	{
+		get { return _health; }
+		private set
+		{
+			_health = value;
+			OnHealthChange.Invoke(_health);
+		}
+	}
 
 	// Use this for initialization
-	void Start () {
-		health = baseHealth;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	// Returns player's health
-	public int GetHealth()
+	void Start()
 	{
-		return health;
+		Health = baseHealth;
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		// if the object it collides with is tagged as an enemy, the player should losw 1 health point.
+		// if the object it collides with is tagged as an enemy, the player should lose 1 health point.
 		if (collision.collider.tag.Equals("Enemy"))
-			health--;
+			Health--;
 
 		if (collision.collider.tag.Equals("HealthPickUp"))
-			health++;
+			Health++;
 	}
 }
