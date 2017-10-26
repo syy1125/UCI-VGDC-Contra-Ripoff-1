@@ -322,7 +322,6 @@ GameObject:
   - component: {fileID: 212054575}
   - component: {fileID: 212054574}
   - component: {fileID: 212054573}
-  - component: {fileID: 212054577}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -394,7 +393,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212054572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 512, y: 384, z: 0}
+  m_LocalPosition: {x: 330.5, y: 186, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1831786596}
@@ -408,24 +407,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &212054577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 212054572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404fa994900f00846a65ed6ea41ee373, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthCellPrefab: {fileID: 1460113627444266, guid: 3fa35999c1d7a0242b6d07a858c3fe1c,
-    type: 2}
-  HealthyColor: {r: 1, g: 0, b: 0, a: 1}
-  DepletedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  CellStart: {x: 0.5, y: 0.5}
-  CellDirection: {x: 1, y: 0}
-  MaxHealth: 5
 --- !u!1001 &1086894087
 Prefab:
   m_ObjectHideFlags: 0
@@ -617,7 +598,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1593102129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 432, y: -369, z: 0}
+  m_LocalPosition: {x: 250.5, y: -171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 876216}
@@ -777,6 +758,7 @@ GameObject:
   - component: {fileID: 1831786596}
   - component: {fileID: 1831786598}
   - component: {fileID: 1831786597}
+  - component: {fileID: 1831786599}
   m_Layer: 5
   m_Name: Health Panel
   m_TagString: Untagged
@@ -835,6 +817,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1831786595}
+--- !u!114 &1831786599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831786595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404fa994900f00846a65ed6ea41ee373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthCellPrefab: {fileID: 1460113627444266, guid: 3fa35999c1d7a0242b6d07a858c3fe1c,
+    type: 2}
+  HealthyColor: {r: 1, g: 0, b: 0, a: 1}
+  DepletedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  CellStart: {x: 0.5, y: 0.5}
+  CellDirection: {x: 1, y: 0}
+  MaxHealth: 0
 --- !u!1 &1980321375
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +861,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980321375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -432, y: 369, z: 0}
+  m_LocalPosition: {x: -250.5, y: 171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 27479791}
