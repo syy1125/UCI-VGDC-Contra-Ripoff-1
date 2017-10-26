@@ -60,7 +60,7 @@ public class HealthHUD : MonoBehaviour
 	private void SpawnCell(int index, Color cellColor)
 	{
 		GameObject healthCell = Instantiate(HealthCellPrefab);
-		healthCell.transform.parent = transform;
+		healthCell.transform.SetParent(transform);
 
 		// Position the cell correctly
 		Vector3 cellPosition = healthCell.transform.position;

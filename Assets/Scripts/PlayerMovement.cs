@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
 	public int jumpForce = 150;
 	public int movementSpeed = 5;
+	public LayerMask groundCollisions;
 
 	void Start () 
 	{
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 	void Update ()
 	{
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
-		float moveVertical = Input.GetAxisRaw ("Vertical");
+		//float moveVertical = Input.GetAxisRaw ("Vertical");
 
 		rb.velocity = new Vector2(moveHorizontal * movementSpeed, rb.velocity.y);
 
@@ -49,10 +50,9 @@ public class PlayerMovement : MonoBehaviour
 
 	bool isGrounded()
 	{
-		Vector2 bottom = (Vector2)col.bounds.ClosestPoint (transform.position + Vector3.down * 3);
-		RaycastHit2D temp = Physics2D.Raycast(bottom, Vector2.down, 0.1f);
-		if(temp.transform != null && temp.transform.gameObject.CompareTag("Ground"))
-			return true;
-		return false;
+		Vector2 bottom = (Vector2)col.bounds.ClosestPoint (transform.position + (Vector3.down * 5));
+		int layerMask = groundCollisions.value;
+		RaycastHit2D temp = Physics2D.Raycast(bottom, Vector2.down, 0.1f, layerMask);
+			return temp.transform != null && temp.transform.gameObject.CompareTag ("Ground");
 	}
 }
