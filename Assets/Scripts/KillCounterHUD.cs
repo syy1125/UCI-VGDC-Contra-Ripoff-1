@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class KillCounterHUD : MonoBehaviour
+public class KillCounterHud : MonoBehaviour
 {
 	private int _kills;
 
