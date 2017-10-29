@@ -32,8 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
 		if (Input.GetButtonDown ("Jump"))
 			AttemptJump ();
+		
 		if(isGrounded())
 			hasDoubleJump = true;
+		
 		if(moveVertical < 0 && currentPlatform != null)
 			currentPlatform.DropThrough(col);
 			
@@ -41,8 +43,11 @@ public class PlayerMovement : MonoBehaviour
 
 	void AttemptJump()
 	{
-		if (!isGrounded () && !hasDoubleJump)
+		bool grounded = isGrounded();
+		if (!grounded && !hasDoubleJump)
 			return;
+		if (!grounded)
+			hasDoubleJump = false;
 		Jump ();
 	}
 
@@ -51,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 		rb.velocity = new Vector2(rb.velocity.x, 0);
 		rb.AddForce (new Vector2(0, jumpForce));
 	}
-
+		
 	bool isGrounded()
 	{
 		Vector2 bottom = (Vector2)col.bounds.ClosestPoint (transform.position + (Vector3.down * 5));
