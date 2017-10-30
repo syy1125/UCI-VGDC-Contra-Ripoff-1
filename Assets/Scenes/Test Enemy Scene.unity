@@ -77,17 +77,15 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVRFilterTypeDirect: 0
-    m_PVRFilterTypeIndirect: 0
-    m_PVRFilterTypeAO: 0
+    m_PVRFiltering: 0
     m_PVRFilteringMode: 1
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
     m_PVRFilteringGaussRadiusAO: 2
-    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-    m_PVRFilteringAtrousPositionSigmaIndirect: 2
-    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_PVRFilteringAtrousColorSigma: 1
+    m_PVRFilteringAtrousNormalSigma: 1
+    m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -109,8 +107,6 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
-    debug:
-      m_Flags: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &876215
 GameObject:
@@ -292,6 +288,31 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89cb42a5f6147ba42b72d35298147209, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &142567528 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1790736915327534, guid: 7b09d3db061acd34690b6d9b06e56efd,
+    type: 2}
+  m_PrefabInternal: {fileID: 549880375}
+--- !u!114 &142567529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 142567528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123e3e7da8bd82f49af9cfdec33457a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHealth: 1
+  speed: 0.5
+  jumpForce: 300
+  groundCollisions:
+    serializedVersion: 2
+    m_Bits: 256
+  jumpingTolerance: 1
+  timeBetweenJumps: 3
+  jumpCooldown: 0
 --- !u!1 &212054572
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,8 +395,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212054572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 320, y: 221, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1831786596}
   - {fileID: 876216}
@@ -393,6 +414,62 @@ Transform:
   m_PrefabParentObject: {fileID: 4887201507552552, guid: 6195aabe58ad26f48abae2446f55a656,
     type: 2}
   m_PrefabInternal: {fileID: 1086894087}
+--- !u!1001 &549880375
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: speed
+      value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790736915327534, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_Name
+      value: Jumping Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790736915327534, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1086894087
 Prefab:
   m_ObjectHideFlags: 0
@@ -670,7 +747,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1593102129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 240, y: -206, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 876216}
@@ -801,6 +878,10 @@ Prefab:
         type: 2}
       propertyPath: speed
       value: 0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790736915327534, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
@@ -985,7 +1066,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980321375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -240, y: 206, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 27479791}
@@ -1060,8 +1141,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &1980321380
 MonoBehaviour:
   m_ObjectHideFlags: 0
