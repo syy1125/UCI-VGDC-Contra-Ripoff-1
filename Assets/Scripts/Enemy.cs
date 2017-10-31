@@ -7,7 +7,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     public int baseHealth = 1;
-    private int Health;
+    private int _health;
+
+	public int Health
+	{
+		get { return _health; }
+		set { _health = value; }
+	}
+
 	// Use this for initialization
 	void Start () {
         Health = baseHealth;

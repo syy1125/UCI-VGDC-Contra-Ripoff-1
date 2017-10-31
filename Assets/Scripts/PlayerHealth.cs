@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
 	public int Health
 	{
 		get { return _health; }
-		private set
+		set
 		{
 			_health = value;
 			OnHealthChange.Invoke(_health);
