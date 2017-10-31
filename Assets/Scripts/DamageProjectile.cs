@@ -5,28 +5,21 @@ using UnityEngine;
 public class DamageProjectile : MonoBehaviour
 {
 	public bool Hostile;
+	public int Damage = 1;
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (Hostile && other.gameObject.CompareTag("Player"))
-		{
-			PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+		AbstractHealth health = other.gameObject.GetComponent<AbstractHealth>();
 
-			if (playerHealth != null)
-			{
-				playerHealth.Health--;
-				Destroy(gameObject);
-			}
-		}
-		else if (!Hostile && other.gameObject.CompareTag("Enemy"))
+		if ((Hostile && health is PlayerHealth) || (!Hostile && health is EnemyHealth))
 		{
-			Enemy enemy = other.gameObject.GetComponent<Enemy>();
-
-			if (enemy != null)
-			{
-				enemy.Health--;
-				Destroy(gameObject);
-			}
+			DealDamage(health);
 		}
+	}
+
+	private void DealDamage(AbstractHealth health)
+	{
+		health.Health -= Damage;
+		Destroy(gameObject);
 	}
 }

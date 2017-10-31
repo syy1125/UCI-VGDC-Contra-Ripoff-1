@@ -99,8 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b6c1ec6c10cbe4c86e93c89ae09361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 1
-  speed: 0.001
+  MovementSpeed: 1
+  Rb: {fileID: 50156304194450642}
+  Collider: {fileID: 61007536808297104}
+  GroundMask:
+    serializedVersion: 2
+    m_Bits: 256
+  MoveThreshold: 0.1
+  Player: {fileID: 0}
 --- !u!212 &212794856367993038
 SpriteRenderer:
   m_ObjectHideFlags: 1
