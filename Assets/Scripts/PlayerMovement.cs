@@ -59,9 +59,6 @@ public class PlayerMovement : MonoBehaviour
 		
 	bool isGrounded()
 	{
-		Vector2 bottom = (Vector2)col.bounds.ClosestPoint (transform.position + (Vector3.down * 5));
-		int layerMask = groundCollisions.value;
-		RaycastHit2D temp = Physics2D.Raycast(bottom, Vector2.down, 0.1f, layerMask);
-			return temp.transform != null && temp.transform.gameObject.CompareTag ("Ground");
+		return col.IsTouchingLayers(groundCollisions.value);
 	}
 }

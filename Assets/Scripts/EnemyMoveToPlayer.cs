@@ -13,6 +13,6 @@ public class EnemyMoveToPlayer : Enemy {
 	void Update () {
         playerPositionX = GameObject.FindGameObjectWithTag("Player").transform.position.x;
         transform.position = Vector2.MoveTowards(transform.position,
-            new Vector2(playerPositionX, transform.position.y), speed);
+            new Vector2(playerPositionX, transform.position.y), speed * Time.deltaTime);
     }
 }
