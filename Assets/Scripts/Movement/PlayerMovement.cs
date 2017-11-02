@@ -8,11 +8,17 @@ public class PlayerMovement : AbstractMovement
 
 	public int jumpForce = 150;
 	
-	/*[HideInInspector]*/
-	public TopPlatformCollision currentPlatform;
+	[HideInInspector] public TopPlatformCollision currentPlatform;
 
 	private void Start()
 	{
+		Reset();
+	}
+
+	protected override void Reset()
+	{
+		base.Reset();
+
 		hasDoubleJump = true;
 		currentPlatform = null;
 	}

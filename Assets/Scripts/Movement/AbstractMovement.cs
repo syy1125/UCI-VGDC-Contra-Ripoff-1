@@ -6,8 +6,8 @@ public abstract class AbstractMovement : MonoBehaviour
 {
 	public float MovementSpeed;
 
-	public Rigidbody2D Rb;
-	public Collider2D Collider;
+	protected Rigidbody2D Rb;
+	protected Collider2D Collider;
 	public LayerMask GroundMask;
 
 	protected virtual void Reset()

@@ -15,14 +15,29 @@ public class HealthHud : MonoBehaviour
 	/// </summary>
 	public Vector2 CellDirection = Vector2.right;
 
-	public PlayerHealth PlayerHealth;
+	public int MaxHealth;
+
+	private int _health;
 
 	private void Start()
 	{
+		_health = MaxHealth;
 		UpdateHealthDisplay();
 	}
 
-	public void UpdateHealthDisplay()
+	public void SetMaxHealth(int maxHealth)
+	{
+		MaxHealth = maxHealth;
+		UpdateHealthDisplay();
+	}
+
+	public void SetHealth(int health)
+	{
+		_health = health;
+		UpdateHealthDisplay();
+	}
+
+	private void UpdateHealthDisplay()
 	{
 		// Remove all children
 		foreach (Transform child in transform)
@@ -32,11 +47,11 @@ public class HealthHud : MonoBehaviour
 
 		int index = 0;
 		// Render filled hearts
-		for (; index < PlayerHealth.Health; index++)
+		for (; index < _health; index++)
 		{
 			SpawnCell(index, HealthyColor);
 		}
-		for (; index < PlayerHealth.MaxHealth; index++)
+		for (; index < MaxHealth; index++)
 		{
 			SpawnCell(index, DepletedColor);
 		}
