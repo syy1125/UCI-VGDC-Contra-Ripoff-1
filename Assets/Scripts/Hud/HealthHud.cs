@@ -6,38 +6,25 @@ public class HealthHud : MonoBehaviour
 	public GameObject HealthCellPrefab;
 	public Color HealthyColor = Color.red;
 	public Color DepletedColor = Color.gray;
+
 	/// <summary>
 	/// Where the health cells start. The components are a multiplier for the cell's width and height.
 	/// </summary>
-	public Vector2 CellStart = new Vector2(0.5f,0.5f);
+	public Vector2 CellStart = new Vector2(0.5f, 0.5f);
+
 	/// <summary>
 	/// What direction the health cells will stretch out.The components are a multiplier for the cell's width and height.
 	/// </summary>
 	public Vector2 CellDirection = Vector2.right;
 
-	public int MaxHealth;
-
-	private int _health;
+	public PlayerHealth Health;
 
 	private void Start()
 	{
-		_health = MaxHealth;
 		UpdateHealthDisplay();
 	}
 
-	public void SetMaxHealth(int maxHealth)
-	{
-		MaxHealth = maxHealth;
-		UpdateHealthDisplay();
-	}
-
-	public void SetHealth(int health)
-	{
-		_health = health;
-		UpdateHealthDisplay();
-	}
-
-	private void UpdateHealthDisplay()
+	public void UpdateHealthDisplay()
 	{
 		// Remove all children
 		foreach (Transform child in transform)
@@ -47,11 +34,12 @@ public class HealthHud : MonoBehaviour
 
 		int index = 0;
 		// Render filled hearts
-		for (; index < _health; index++)
+		for (; index < Health.Health; index++)
 		{
 			SpawnCell(index, HealthyColor);
 		}
-		for (; index < MaxHealth; index++)
+		// Render depleted hearts
+		for (; index < Health.MaxHealth; index++)
 		{
 			SpawnCell(index, DepletedColor);
 		}
