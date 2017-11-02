@@ -9,6 +9,8 @@ public abstract class AbstractHealth : MonoBehaviour
 	public int MaxHealth;
 
 	private int _health;
+	public HealthChangeEventEmitter OnDamage;
+	public HealthChangeEventEmitter OnHeal;
 	public UnityEvent OnHealthChange;
 
 	public int Health
@@ -16,6 +18,8 @@ public abstract class AbstractHealth : MonoBehaviour
 		get { return _health; }
 		set
 		{
+			if (_health == value) return;
+
 			_health = value;
 			OnHealthChange.Invoke();
 
@@ -29,6 +33,28 @@ public abstract class AbstractHealth : MonoBehaviour
 	private void Start()
 	{
 		Health = MaxHealth;
+	}
+
+	public void Damage(GameObject source, int amount)
+	{
+		HealthChangeEvent healthChangeEvent = new HealthChangeEvent(source, gameObject, -amount);
+		OnDamage.Invoke(healthChangeEvent);
+
+		if (!healthChangeEvent.Cancelled)
+		{
+			Health += healthChangeEvent.HealthDelta;
+		}
+	}
+
+	public void Heal(GameObject source, int amount)
+	{
+		HealthChangeEvent healthChangeEvent = new HealthChangeEvent(source, gameObject, amount);
+		OnHeal.Invoke(healthChangeEvent);
+
+		if (!healthChangeEvent.Cancelled)
+		{
+			Health += healthChangeEvent.HealthDelta;
+		}
 	}
 
 	protected abstract void OnDeath();

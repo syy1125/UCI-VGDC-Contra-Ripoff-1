@@ -19,7 +19,7 @@ public class DamageProjectile : MonoBehaviour
 
 	private void DealDamage(AbstractHealth health)
 	{
-		health.Health -= Damage;
+		health.Damage(gameObject, Damage);
 		Destroy(gameObject);
 	}
 }
