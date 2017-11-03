@@ -6,13 +6,11 @@ public class PlayerMovement : AbstractMovement
 {
 	[SerializeField] private bool hasDoubleJump;
 	private bool _wasGrounded;
-	private bool _controlled;
+	public LayerMask PlatformMask;
 
 	public int jumpForce = 150;
 	public float KnockbackStrengthX = 50;
 	public float KnockbackStrengthY = 100;
-
-	[HideInInspector] public TopPlatformCollision currentPlatform;
 
 	private void Start()
 	{
@@ -24,38 +22,28 @@ public class PlayerMovement : AbstractMovement
 		base.Reset();
 
 		hasDoubleJump = true;
-		currentPlatform = null;
 	}
 
 	private void Update()
 	{
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
-		float moveVertical = Input.GetAxisRaw("Vertical");
 
 		bool grounded = IsGrounded();
 
 		if (grounded)
 		{
 			hasDoubleJump = true;
-			if (!_wasGrounded)
-			{
-				// Landed, player regains control
-				_controlled = true;
-			}
-		}
-
-		if (_controlled)
-		{
 			Rb.velocity = new Vector2(moveHorizontal * MovementSpeed, Rb.velocity.y);
-
-			if (Input.GetButtonDown("Jump"))
-				AttemptJump();
+		}
+		else
+		{
+			Rb.AddForce(new Vector2(moveHorizontal * MovementSpeed, 0));
 		}
 
-		if (moveVertical < 0 && currentPlatform != null)
-			currentPlatform.DropThrough(Collider);
-
-		_wasGrounded = grounded;
+		if (Input.GetButtonDown("Jump"))
+		{
+			AttemptJump();
+		}
 	}
 
 	private void AttemptJump()
@@ -94,8 +82,5 @@ public class PlayerMovement : AbstractMovement
 		// Apply knockback
 		Rb.velocity = new Vector2(Rb.velocity.x, 0);
 		Rb.AddForce(new Vector2(xStrength, KnockbackStrengthY));
-
-		// Player loses control of character temporarily
-		_controlled = false;
 	}
 }
