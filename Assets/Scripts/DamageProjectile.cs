@@ -19,7 +19,10 @@ public class DamageProjectile : MonoBehaviour
 
 	private void DealDamage(AbstractHealth health)
 	{
-		health.Damage(gameObject, Damage);
-		Destroy(gameObject);
+		if (health.Damage(gameObject, Damage))
+		{
+			// Remove the projectile if damade dealt successfully.
+			Destroy(gameObject);
+		}
 	}
 }
