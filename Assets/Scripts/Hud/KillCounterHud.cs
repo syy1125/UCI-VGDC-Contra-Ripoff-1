@@ -15,7 +15,7 @@ public class KillCounterHud : MonoBehaviour
 	private void Start()
 	{
 		_textComponent = gameObject.GetComponent<Text>();
-		
+
 		// The text component's current text is to be used as template.
 		_template = _textComponent.text;
 

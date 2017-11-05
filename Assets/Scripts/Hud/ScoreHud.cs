@@ -7,12 +7,13 @@ public class ScoreHud : MonoBehaviour
 	/// Will automatically be set the the text component's content during initialization.
 	/// </summary>
 	private string _template;
+
 	private Text _textComponent;
 
 	private void Start()
 	{
 		_textComponent = gameObject.GetComponent<Text>();
-		
+
 		// The text component's current text is to be used as template.
 		_template = _textComponent.text;
 

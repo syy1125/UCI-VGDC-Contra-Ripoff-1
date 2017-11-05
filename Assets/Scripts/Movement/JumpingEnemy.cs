@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class JumpingEnemy : EnemyMovement
 {
@@ -9,7 +7,7 @@ public class JumpingEnemy : EnemyMovement
 	public float jumpingTolerance; // represents how close the player is before it tries to jump
 	public int timeBetweenJumps; //how long in between jumps
 
-	[SerializeField]private float jumpCooldown;
+	[SerializeField] private float jumpCooldown;
 
 	// Update is called once per frame
 	protected override void Update()
@@ -26,7 +24,7 @@ public class JumpingEnemy : EnemyMovement
 
 	IEnumerator JumpCD()
 	{
-		while(jumpCooldown > 0)
+		while (jumpCooldown > 0)
 		{
 			jumpCooldown -= Time.deltaTime;
 			yield return null;
@@ -40,13 +38,13 @@ public class JumpingEnemy : EnemyMovement
 		float enemyPositionY = this.transform.position.y;
 		float playerPositionX = Player.transform.position.x;
 		float enemyPositionX = this.transform.position.x;
-		
+
 		bool jump = false;
-		if(playerPositionY > enemyPositionY)
+		if (playerPositionY > enemyPositionY)
 			jump = true;
-		if(Mathf.Abs(playerPositionY - enemyPositionY) <= 0.1)
+		if (Mathf.Abs(playerPositionY - enemyPositionY) <= 0.1)
 			jump = false;
-		if(Mathf.Abs(playerPositionX - enemyPositionX) >= jumpingTolerance)
+		if (Mathf.Abs(playerPositionX - enemyPositionX) >= jumpingTolerance)
 			jump = false;
 		Debug.Log(jump);
 		return jump;
@@ -56,12 +54,12 @@ public class JumpingEnemy : EnemyMovement
 	{
 		if (!IsGrounded())
 			return;
-		Jump ();
+		Jump();
 	}
 
 	void Jump()
 	{
 		Rb.velocity = new Vector2(Rb.velocity.x, 0);
-		Rb.AddForce (new Vector2(0, jumpForce));
+		Rb.AddForce(new Vector2(0, jumpForce));
 	}
 }
