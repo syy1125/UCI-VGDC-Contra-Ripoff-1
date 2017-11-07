@@ -8,8 +8,12 @@ public class PlayerMovement : AbstractMovement
 	public LayerMask PlatformMask;
 
 	public int jumpForce = 150;
-	public float KnockbackStrengthX = 50;
-	public float KnockbackStrengthY = 100;
+	public float KnockbackStrength = 100;
+
+	/// <summary>
+	/// The minimum retarding force the player must apply when moving at above standard speeds horizontally.
+	/// </summary>
+	public float MinResistance = 0.1f;
 
 	private void Start()
 	{
@@ -32,12 +36,12 @@ public class PlayerMovement : AbstractMovement
 		bool movingReallyFast = false;
 		if (Rb.velocity.x < -MovementSpeed)
 		{
-			moveHorizontal = Mathf.Max(0, moveHorizontal);
+			moveHorizontal = Mathf.Max(MinResistance, moveHorizontal);
 			movingReallyFast = true;
 		}
 		if (Rb.velocity.x > MovementSpeed)
 		{
-			moveHorizontal = Mathf.Min(0, moveHorizontal);
+			moveHorizontal = Mathf.Min(-MinResistance, moveHorizontal);
 			movingReallyFast = true;
 		}
 
@@ -101,6 +105,6 @@ public class PlayerMovement : AbstractMovement
 		*/
 		Vector2 direction = -(sourcePosition - targetPosition).normalized;
 		Rb.velocity = new Vector2(Rb.velocity.x, 0);
-		Rb.AddForce(KnockbackStrengthY*direction);
+		Rb.AddForce(KnockbackStrength * direction);
 	}
 }

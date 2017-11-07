@@ -316,6 +316,11 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114024455405524390, guid: 89cb42a5f6147ba42b72d35298147209,
+        type: 2}
+      propertyPath: PlayerCollider
+      value: 
+      objectReference: {fileID: 2082183082}
     m_RemovedComponents:
     - {fileID: 61551104716204482, guid: 89cb42a5f6147ba42b72d35298147209, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 89cb42a5f6147ba42b72d35298147209, type: 2}
@@ -421,86 +426,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4887201507552552, guid: 6195aabe58ad26f48abae2446f55a656,
     type: 2}
   m_PrefabInternal: {fileID: 1086894087}
---- !u!1 &741049895
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 741049896}
-  - component: {fileID: 741049898}
-  - component: {fileID: 741049899}
-  - component: {fileID: 741049897}
-  m_Layer: 0
-  m_Name: Pass Through Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &741049896
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 741049895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1738967556}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &741049897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 741049895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 2082183082}
-  PlatformCollider: {fileID: 1738967554}
-  PassThroughTrigger: {fileID: 0}
---- !u!68 &741049898
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 741049895}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0.5}
-  - {x: 0.5, y: 0.5}
---- !u!251 &741049899
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 741049895}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1001 &1086894087
 Prefab:
   m_ObjectHideFlags: 0
@@ -1107,7 +1032,7 @@ Prefab:
     - target: {fileID: 50842431648521534, guid: 8e0762839b0aa80419a666c22c8f799d,
         type: 2}
       propertyPath: m_LinearDrag
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
@@ -1115,28 +1040,6 @@ Prefab:
 --- !u!1 &1738967552 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1010813996402268, guid: 89cb42a5f6147ba42b72d35298147209,
-    type: 2}
-  m_PrefabInternal: {fileID: 81204329}
---- !u!68 &1738967554
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1738967552}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0.5}
-  - {x: 0.5, y: 0.5}
---- !u!4 &1738967556 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4689732395866084, guid: 89cb42a5f6147ba42b72d35298147209,
     type: 2}
   m_PrefabInternal: {fileID: 81204329}
 --- !u!251 &1738967557
