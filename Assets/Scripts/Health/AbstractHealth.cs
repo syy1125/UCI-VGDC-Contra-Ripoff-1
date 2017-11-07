@@ -32,7 +32,7 @@ public abstract class AbstractHealth : MonoBehaviour
 		Health = MaxHealth;
 	}
 
-	public bool Damage(GameObject source, int amount)
+	public void Damage(GameObject source, int amount)
 	{
 		HealthChangeEvent healthChangeEvent = new HealthChangeEvent(source, gameObject, -amount);
 		OnDamage.Invoke(healthChangeEvent);
@@ -40,11 +40,6 @@ public abstract class AbstractHealth : MonoBehaviour
 		if (!healthChangeEvent.Cancelled)
 		{
 			Health += healthChangeEvent.HealthDelta;
-			return true;
-		}
-		else
-		{
-			return false;
 		}
 	}
 
