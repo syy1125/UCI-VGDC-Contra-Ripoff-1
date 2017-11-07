@@ -402,7 +402,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212054572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 330.5, y: 186, z: 0}
+  m_LocalPosition: {x: 330, y: 185.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1831786596}
@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCollider: {fileID: 2082183082}
   PlatformCollider: {fileID: 1738967554}
+  PassThroughTrigger: {fileID: 0}
 --- !u!68 &741049898
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -735,6 +736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hostile: 1
   Damage: 1
+  Lifespan: 30
 --- !u!58 &1533661733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -915,7 +917,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1593102129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250.5, y: -171, z: 0}
+  m_LocalPosition: {x: 250, y: -170.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 876216}
@@ -1102,6 +1104,11 @@ Prefab:
       propertyPath: PlatformMask.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 50842431648521534, guid: 8e0762839b0aa80419a666c22c8f799d,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
   m_IsPrefabParent: 0
@@ -1263,7 +1270,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980321375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -250.5, y: 171, z: 0}
+  m_LocalPosition: {x: -250, y: 170.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 27479791}
