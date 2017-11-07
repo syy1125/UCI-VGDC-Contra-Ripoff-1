@@ -5,10 +5,8 @@ public class PlayerMovement : AbstractMovement
 {
 	[SerializeField] private bool hasDoubleJump;
 	private bool _wasGrounded;
-	public LayerMask PlatformMask;
 
 	public int jumpForce = 150;
-	public float KnockbackStrength = 100;
 
 	/// <summary>
 	/// The minimum retarding force the player must apply when moving at above standard speeds horizontally.
@@ -82,29 +80,5 @@ public class PlayerMovement : AbstractMovement
 	{
 		Rb.velocity = new Vector2(Rb.velocity.x, 0);
 		Rb.AddForce(new Vector2(0, jumpForce));
-	}
-
-	public void Knockback(HealthChangeEvent healthChangeEvent)
-	{
-		Vector3 sourcePosition = healthChangeEvent.Source.transform.position;
-		Vector3 targetPosition = healthChangeEvent.Target.transform.position;
-		/*
-		float xStrength = 0;
-		if (sourcePosition.x < targetPosition.x)
-		{
-			// Attacked from left, knockback to right.
-			xStrength = KnockbackStrengthX;
-		}
-		if (sourcePosition.x > targetPosition.x)
-		{
-			// Attacked from right, knockback to left.
-			xStrength = -KnockbackStrengthX;
-		}
-
-		// Apply knockback
-		*/
-		Vector2 direction = -(sourcePosition - targetPosition).normalized;
-		Rb.velocity = new Vector2(Rb.velocity.x, 0);
-		Rb.AddForce(KnockbackStrength * direction);
 	}
 }

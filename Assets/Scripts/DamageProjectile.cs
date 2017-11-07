@@ -13,6 +13,8 @@ public class DamageProjectile : MonoBehaviour
 
 	private float _startTime;
 
+	public float KnockbackBaseStrength = 100;
+
 	private void Start()
 	{
 		_startTime = Time.time;
@@ -38,7 +40,18 @@ public class DamageProjectile : MonoBehaviour
 
 	private void DealDamage(AbstractHealth health)
 	{
-		health.Damage(gameObject, Damage);
-		Destroy(gameObject);
+		if (health.Damage(gameObject, Damage))
+		{
+			Knockback(health.gameObject);
+			Destroy(gameObject);
+		}
+	}
+
+	private void Knockback(GameObject target)
+	{
+		Vector2 knockbackDirection = target.transform.position - gameObject.transform.position;
+		Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+		Vector2 knockbackForce = (velocity + (Vector2) Vector3.Project(velocity, knockbackDirection)) * KnockbackBaseStrength;
+		target.GetComponent<Rigidbody2D>().AddForce(knockbackForce);
 	}
 }

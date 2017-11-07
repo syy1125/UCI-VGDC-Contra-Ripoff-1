@@ -662,6 +662,7 @@ MonoBehaviour:
   Hostile: 1
   Damage: 1
   Lifespan: 30
+  KnockbackBaseStrength: 100
 --- !u!58 &1533661733
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -748,7 +749,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1533661730}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: 0.179, z: 0}
+  m_LocalPosition: {x: 0.201, y: -1.092, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -939,11 +940,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4238668706006566, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.004
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4238668706006566, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.262
+      value: -0.384
       objectReference: {fileID: 0}
     - target: {fileID: 4238668706006566, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1280,18 +1281,7 @@ MonoBehaviour:
   MaxHealth: 3
   OnDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2082183084}
-        m_MethodName: Knockback
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnHeal:
@@ -1325,12 +1315,6 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 50842431648521534, guid: 8e0762839b0aa80419a666c22c8f799d,
     type: 2}
   m_PrefabInternal: {fileID: 1673791043}
---- !u!114 &2082183084 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114274274156847596, guid: 8e0762839b0aa80419a666c22c8f799d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1673791043}
-  m_Script: {fileID: 11500000, guid: b8302aa321c566e4bba14d595fdd4c80, type: 3}
 --- !u!1 &2137231777
 GameObject:
   m_ObjectHideFlags: 0
