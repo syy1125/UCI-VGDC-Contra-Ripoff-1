@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class PlayerMovement : AbstractMovement
 {
@@ -28,10 +29,29 @@ public class PlayerMovement : AbstractMovement
 
 		bool grounded = IsGrounded();
 
+		bool movingReallyFast = false;
+		if (Rb.velocity.x < -MovementSpeed)
+		{
+			moveHorizontal = Mathf.Max(0, moveHorizontal);
+			movingReallyFast = true;
+		}
+		if (Rb.velocity.x > MovementSpeed)
+		{
+			moveHorizontal = Mathf.Min(0, moveHorizontal);
+			movingReallyFast = true;
+		}
+
 		if (grounded)
 		{
 			hasDoubleJump = true;
-			Rb.velocity = new Vector2(moveHorizontal * MovementSpeed, Rb.velocity.y);
+			if (movingReallyFast)
+			{
+				Rb.AddForce(new Vector2(moveHorizontal * MovementSpeed, 0));
+			}
+			else
+			{
+				Rb.velocity = new Vector2(moveHorizontal * MovementSpeed, Rb.velocity.y);
+			}
 		}
 		else
 		{
@@ -64,7 +84,7 @@ public class PlayerMovement : AbstractMovement
 	{
 		Vector3 sourcePosition = healthChangeEvent.Source.transform.position;
 		Vector3 targetPosition = healthChangeEvent.Target.transform.position;
-
+		/*
 		float xStrength = 0;
 		if (sourcePosition.x < targetPosition.x)
 		{
@@ -78,7 +98,9 @@ public class PlayerMovement : AbstractMovement
 		}
 
 		// Apply knockback
+		*/
+		Vector2 direction = -(sourcePosition - targetPosition).normalized;
 		Rb.velocity = new Vector2(Rb.velocity.x, 0);
-		Rb.AddForce(new Vector2(xStrength, KnockbackStrengthY));
+		Rb.AddForce(KnockbackStrengthY*direction);
 	}
 }
