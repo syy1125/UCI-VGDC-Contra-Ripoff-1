@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour {
+public class BulletScript : MonoBehaviour 
+{
     GameObject Player;
     public float Speed;
     private Rigidbody2D rb;
