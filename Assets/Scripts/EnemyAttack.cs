@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
@@ -13,8 +16,7 @@ public class EnemyAttack : MonoBehaviour
 	public float ProjectileSpeed = 1;
 
 	public int PredictiveAim = 0;
-	private Vector2? _playerLastVelocity;
-	private Vector2 _playerAcceleration;
+	private Vector2[] _playerTransformDerivatives;
 
 	/// <summary>
 	/// The enemy will fire at most this degrees above/below the player when trying to lead.
@@ -29,19 +31,16 @@ public class EnemyAttack : MonoBehaviour
 	private void Start()
 	{
 		_fireCooldown = 0;
+		_playerTransformDerivatives = new Vector2[PredictiveAim + 1];
 	}
 
 	private void Update()
 	{
+		TrackPlayerMotionDerivatives();
+
 		if (_fireCooldown > 0)
 		{
 			_fireCooldown -= Time.deltaTime;
-		}
-
-		if (PredictiveAim == 2)
-		{
-			// Track player acceleration
-			TrackPlayerAccelration();
 		}
 
 		if (_fireCooldown <= 0)
@@ -50,47 +49,50 @@ public class EnemyAttack : MonoBehaviour
 		}
 	}
 
-	private void TrackPlayerAccelration()
+	private void TrackPlayerMotionDerivatives()
 	{
-		Vector2 playerVelocity = Player.GetComponent<Rigidbody2D>().velocity;
-		if (_playerLastVelocity != null)
+		Vector2[] newDerivatives = new Vector2[PredictiveAim + 1];
+
+		newDerivatives[0] = Player.transform.position;
+		for (int order = 1; order <= PredictiveAim; order++)
 		{
-			_playerAcceleration = (Vector2) ((playerVelocity - _playerLastVelocity) / Time.deltaTime);
+			newDerivatives[order] = (newDerivatives[order - 1] - _playerTransformDerivatives[order - 1]) / Time.deltaTime;
 		}
-		_playerLastVelocity = playerVelocity;
+
+		Debug.Log(String.Join(",", newDerivatives.Select(vector => vector.ToString()).ToArray()));
+		_playerTransformDerivatives = newDerivatives;
+	}
+
+	private Vector2 GetAimLocation()
+	{
+		int taylorDenominator = 1;
+		Vector2 position = _playerTransformDerivatives[0];
+		float estimatedTravelTime = (position - (Vector2) transform.position).magnitude / ProjectileSpeed;
+		float timeMultiplier = 1;
+
+		for (int order = 1; order <= PredictiveAim; order++)
+		{
+			taylorDenominator *= order;
+			timeMultiplier *= estimatedTravelTime;
+			position += _playerTransformDerivatives[order] * timeMultiplier / taylorDenominator;
+		}
+
+		return position;
 	}
 
 	private void FireAtPlayer()
 	{
 		GameObject projectile = Instantiate(ProjectilePrefab);
+		Vector2 currentPosition = transform.position;
+		Vector2 target = GetAimLocation();
 
-		Vector2 currentPosition = gameObject.transform.position;
-		Vector2 target = Player.transform.position;
-		float estimatedTimeToImpact = (target - currentPosition).magnitude / ProjectileSpeed;
+		Vector2 direction = target - currentPosition;
 
-		// Apply predictive aim
-		if (PredictiveAim >= 1)
-		{
-			target += Player.GetComponent<Rigidbody2D>().velocity * estimatedTimeToImpact;
-		}
-		if (PredictiveAim >= 2)
-		{
-			target += _playerAcceleration * 0.5f * estimatedTimeToImpact * estimatedTimeToImpact;
-		}
-
-		// Configure projectile
-		Vector2 direction = (target - currentPosition);
 		// Clamp firing direction
 		Vector2 playerOffset = (Vector2) Player.transform.position - currentPosition;
 		float angleOffset = Vector2.SignedAngle(playerOffset, direction);
-		if (angleOffset < -FiringArc)
-		{
-			direction = Quaternion.Euler(-FiringArc, 0, 0) * playerOffset;
-		}
-		if (angleOffset > FiringArc)
-		{
-			direction = Quaternion.Euler(FiringArc, 0, 0) * playerOffset;
-		}
+		if (angleOffset < -FiringArc) direction = Quaternion.Euler(-FiringArc, 0, 0) * playerOffset;
+		if (angleOffset > FiringArc) direction = Quaternion.Euler(FiringArc, 0, 0) * playerOffset;
 
 		projectile.GetComponent<DamageProjectile>().Hostile = true;
 		projectile.transform.position = currentPosition;
