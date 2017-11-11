@@ -23,9 +23,8 @@ GameObject:
   - component: {fileID: 50356743474644556}
   - component: {fileID: 58159309263537042}
   - component: {fileID: 114461513557823440}
-  - component: {fileID: 114029757856200160}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Enemy Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,18 +78,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &114029757856200160
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1588932413359308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65b0c199fcbfc164d9edd1b48ba52754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3
 --- !u!114 &114461513557823440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,8 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c801bfc1eb83ac48b344f5f80b4f59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hostile: 0
+  Hostile: 1
   Damage: 1
+  Lifespan: 30
+  KnockbackBaseStrength: 100
 --- !u!212 &212688948090053010
 SpriteRenderer:
   m_ObjectHideFlags: 1
