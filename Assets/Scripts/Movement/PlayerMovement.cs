@@ -30,8 +30,11 @@ public class PlayerMovement : AbstractMovement
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
 		bool grounded = IsGrounded();
-		if (Mathf.Abs (Rb.velocity.x) > 1 && ((Rb.velocity.x < 0 && moveHorizontal >= 0) || (Rb.velocity.x > 0 && moveHorizontal <= 0)))
-			Rb.AddForce (new Vector2(moveHorizontal * MovementSpeed,0));
+		if (Mathf.Abs (Rb.velocity.x) > MovementSpeed) 
+		{
+			if ((Rb.velocity.x < 0 && moveHorizontal >= 0) || (Rb.velocity.x > 0 && moveHorizontal <= 0))
+				Rb.AddForce (new Vector2 (moveHorizontal * MovementSpeed, 0));
+		}
 		else 
 		{
 			Rb.velocity = new Vector2 (moveHorizontal * MovementSpeed, Rb.velocity.y);

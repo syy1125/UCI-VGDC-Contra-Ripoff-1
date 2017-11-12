@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114274274156847596}
   - component: {fileID: 50842431648521534}
   - component: {fileID: 61087975188618372}
+  - component: {fileID: 114028009548383146}
+  - component: {fileID: 114241984033030202}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -37,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1818643752192106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.104, z: 0}
+  m_LocalPosition: {x: -0.004, y: -0.262, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,8 +59,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.3
-  m_Material: {fileID: 0}
+  m_GravityScale: 0.5
+  m_Material: {fileID: 6200000, guid: 065dab8ac7cf6234fa6fb8b101e44e36, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -88,6 +90,69 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &114028009548383146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818643752192106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d70abd8380396d4bbf285f70fff57e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 3
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114274274156847596}
+        m_MethodName: Knockback
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: UpdateHealthDisplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114241984033030202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1818643752192106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316f3462fb25013409f51ff028d73865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 4238668706006566}
+  cooldown: 0.5
+  Projectile: {fileID: 1588932413359308, guid: 3fdc34b86c2c71541a068c9b6e7f35fe, type: 2}
 --- !u!114 &114274274156847596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,9 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8302aa321c566e4bba14d595fdd4c80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasDoubleJump: 0
-  jumpForce: 90
-  movementSpeed: 1
+  MovementSpeed: 1
+  GroundMask:
+    serializedVersion: 2
+    m_Bits: 768
+  hasDoubleJump: 1
+  jumpForce: 120
+  MinResistance: 0.1
 --- !u!212 &212541814247164826
 SpriteRenderer:
   m_ObjectHideFlags: 1

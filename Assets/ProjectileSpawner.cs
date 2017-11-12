@@ -5,6 +5,9 @@ using UnityEngine;
 public class ProjectileSpawner : MonoBehaviour {
 
 	public GameObject proj;
+	public float CD;
+	public float BulletSpeed;
+	public Vector2 BulletDirection;
 
 	void Start () 
 	{
@@ -22,8 +25,10 @@ public class ProjectileSpawner : MonoBehaviour {
 		while (true) 
 		{
 			GameObject p = Instantiate (proj, this.transform.position, Quaternion.identity, this.transform);
-			p.GetComponent<Rigidbody2D> ().velocity = new Vector2(0.2f,0f);
-			yield return new WaitForSeconds (1f);
+			BulletScript temp = p.GetComponent<BulletScript> ();
+			temp.Speed = BulletSpeed;
+			temp.direction = BulletDirection;
+			yield return new WaitForSeconds (CD);
 		}
 	}
 }

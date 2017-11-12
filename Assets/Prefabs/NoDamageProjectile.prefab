@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b0c199fcbfc164d9edd1b48ba52754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 0.5
 --- !u!114 &114302057937266900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c801bfc1eb83ac48b344f5f80b4f59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hostile: 0
+  Hostile: 1
   Damage: 0
   Lifespan: 30
-  KnockbackBaseStrength: 100
+  KnockbackBaseStrength: 3
 --- !u!212 &212786333104104282
 SpriteRenderer:
   m_ObjectHideFlags: 1

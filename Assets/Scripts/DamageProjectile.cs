@@ -51,7 +51,7 @@ public class DamageProjectile : MonoBehaviour
 	{
 		Vector2 knockbackDirection = target.transform.position - gameObject.transform.position;
 		Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
-		target.GetComponent<Rigidbody2D> ().AddForce (knockbackDirection.normalized * KnockbackBaseStrength);
+		target.GetComponent<Rigidbody2D> ().AddForce (knockbackDirection.normalized * KnockbackBaseStrength, ForceMode2D.Impulse);
 		//Vector2 knockbackForce = (velocity + (Vector2) Vector3.Project(velocity, knockbackDirection)) * KnockbackBaseStrength;
 		//target.GetComponent<Rigidbody2D>().AddForce(knockbackForce);
 	}

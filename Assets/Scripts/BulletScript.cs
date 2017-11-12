@@ -6,12 +6,13 @@ public class BulletScript : MonoBehaviour
 {
     GameObject Player;
     public float Speed;
+	public Vector2 direction;
+
     private Rigidbody2D rb;
 
     // Use this for initialization
     void Start()
     {
-        Speed = 3;
         Player = GameObject.FindGameObjectWithTag("Player");
         if (Player != null)
         {
@@ -21,7 +22,7 @@ public class BulletScript : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(Speed, 0);
+		rb.velocity = direction.normalized*Speed;//.normalized.Scale(new Vector2(Speed, Speed));
 
     }
 
