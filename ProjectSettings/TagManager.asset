@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - HealthPickUp
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
+  - Ground
   - Platform
-  - Floor
-  - 
-  - 
+  - Platform Detector
+  - Ignore Platform
   - 
   - 
   - 

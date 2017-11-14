@@ -15,15 +15,16 @@ public class PlayerMovement : AbstractMovement
 	/// </summary>
 	public float MinResistance = 0.1f;
 
-	private void Start()
+	protected override void Start()
 	{
 		Reset();
+		base.Start();
 	}
 
 	protected override void Reset()
 	{
 		base.Reset();
-		if(instance != null)
+		if (instance != null)
 			Destroy(gameObject);
 		instance = gameObject;
 
@@ -35,17 +36,17 @@ public class PlayerMovement : AbstractMovement
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
 		bool grounded = IsGrounded();
-		if (Mathf.Abs (Rb.velocity.x) > MovementSpeed) 
+		if (Mathf.Abs(Rb.velocity.x) > MovementSpeed)
 		{
 			if ((Rb.velocity.x < 0 && moveHorizontal >= 0) || (Rb.velocity.x > 0 && moveHorizontal <= 0))
 				Rb.AddForce (new Vector2 (moveHorizontal * MovementSpeed, 0));
 		}
-		else 
+		else
 		{
 			Rb.velocity = new Vector2 (moveHorizontal * MovementSpeed, Rb.velocity.y);
 		}
 
-		if (grounded) 
+		if (grounded)
 		{
 			hasDoubleJump = true;
 		}
@@ -99,5 +100,10 @@ public class PlayerMovement : AbstractMovement
 	{
 		Rb.velocity = new Vector2(Rb.velocity.x, 0);
 		Rb.AddForce(new Vector2(0, jumpForce));
+	}
+
+	protected override bool ShouldPassThroughPlatform()
+	{
+		return Input.GetAxisRaw("Vertical") < 0;
 	}
 }

@@ -31,9 +31,10 @@ public class EnemyMovement : AbstractMovement
 			Player = GameObject.FindGameObjectWithTag("Player");
 	}*/
 
-	protected void Start()
+	protected override void Start()
 	{
 		base.Reset();
+		base.Start();
 
 		if (Player == null)
 			Player = GameObject.FindGameObjectWithTag("Player");

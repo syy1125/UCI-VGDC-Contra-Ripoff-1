@@ -165,9 +165,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 1
-  GroundMask:
+  Ground:
     serializedVersion: 2
     m_Bits: 768
+  PlatformDetector:
+    serializedVersion: 2
+    m_Bits: 1024
+  DefaultLayer: 0
+  IgnorePlatformLayer: 11
   hasDoubleJump: 1
   jumpForce: 120
   MinResistance: 0.1

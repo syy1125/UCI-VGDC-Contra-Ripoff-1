@@ -59,7 +59,7 @@ public class EnemyAttack : MonoBehaviour
 			newDerivatives[order] = (newDerivatives[order - 1] - _playerTransformDerivatives[order - 1]) / Time.deltaTime;
 		}
 
-		Debug.Log(String.Join(",", newDerivatives.Select(vector => vector.ToString()).ToArray()));
+//		Debug.Log(String.Join(",", newDerivatives.Select(vector => vector.ToString()).ToArray()));
 		_playerTransformDerivatives = newDerivatives;
 	}
 
