@@ -8,6 +8,12 @@ public abstract class AbstractMovement : MonoBehaviour
 	protected Collider2D Collider;
 	public LayerMask GroundMask;
 
+	/*protected virtual void Start()
+	{
+		Rb = GetComponent<Rigidbody2D>();
+		Collider = GetComponent<Collider2D>();
+	}*/
+
 	protected virtual void Reset()
 	{
 		Rb = GetComponent<Rigidbody2D>();
