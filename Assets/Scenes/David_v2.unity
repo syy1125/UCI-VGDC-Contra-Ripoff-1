@@ -909,7 +909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388259915}
   - component: {fileID: 1388259916}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Platform Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
