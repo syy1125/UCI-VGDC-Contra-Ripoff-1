@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class JumpingEnemy : EnemyMovement
 {
-	public int jumpForce;
-	public float jumpingTolerance; // represents how close the player is before it tries to jump
-	public int timeBetweenJumps; //how long in between jumps
+	/*public int jumpForce = 300;
+	public float jumpingTolerance = 1; // represents how close the player is before it tries to jump
+	public int timeBetweenJumps = 3; //how long in between jumps
 
 	[SerializeField] private float jumpCooldown;
 
@@ -61,5 +61,5 @@ public class JumpingEnemy : EnemyMovement
 	{
 		Rb.velocity = new Vector2(Rb.velocity.x, 0);
 		Rb.AddForce(new Vector2(0, jumpForce));
-	}
+	}*/
 }
