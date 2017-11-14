@@ -25,16 +25,12 @@ public class PlayerShoot : MonoBehaviour {
 
     void shootBullet()
     {
-		Debug.Log ("trying to shoot");
 		Vector2 target = Camera.main.ScreenToWorldPoint (new Vector2 (Input.mousePosition.x, Input.mousePosition.y));
 		Vector2 myPos = (Vector2)transform.position;
 		Vector2 dir = (target-myPos).normalized;
-		Debug.Log (target);
-		Debug.Log (myPos);
-		Debug.Log (dir);
+
 		GameObject bullet = Instantiate(Projectile, firePoint.position, firePoint.rotation);
 		BulletScript b = bullet.GetComponent<BulletScript> ();
-		b.Speed = 1;
 		b.direction = dir;
     }
 }

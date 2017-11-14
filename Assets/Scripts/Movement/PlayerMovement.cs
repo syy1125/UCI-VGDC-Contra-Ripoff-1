@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerMovement : AbstractMovement
 {
+	public static GameObject instance;
+
 	[SerializeField] private bool hasDoubleJump;
 	private bool _wasGrounded;
 
@@ -21,6 +23,9 @@ public class PlayerMovement : AbstractMovement
 	protected override void Reset()
 	{
 		base.Reset();
+		if(instance != null)
+			Destroy(gameObject);
+		instance = gameObject;
 
 		hasDoubleJump = true;
 	}
