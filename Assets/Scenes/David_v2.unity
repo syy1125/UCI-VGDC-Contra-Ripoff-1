@@ -328,7 +328,7 @@ MonoBehaviour:
   MovementSpeed: 1
   GroundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1792
   PlatformDetectorMask:
     serializedVersion: 2
     m_Bits: 0
@@ -339,12 +339,14 @@ MonoBehaviour:
   Floor: {fileID: 0}
   FloorMask:
     serializedVersion: 2
-    m_Bits: 512
-  FloorLayerUsed: 1
+    m_Bits: 256
+  FloorLayerUsed: 0
   jumpForce: 300
-  jumpingTolerance: 1
+  jumpingTolerance: 2
   timeBetweenJumps: 3
   fallTolerance: 2
+  SafeToJumpDetectionDistance: 1.6
+  FallDetectionDistance: 10
   jumpCooldown: 1.8
 --- !u!1 &212054572
 GameObject:
@@ -428,7 +430,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212054572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 329, y: 185, z: 0}
+  m_LocalPosition: {x: 370.5, y: 274, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1831786596}
@@ -498,6 +500,11 @@ Prefab:
     - target: {fileID: 1790736915327534, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50156304194450642, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
@@ -701,7 +708,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.39
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 4134283286398982, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
       propertyPath: m_LocalPosition.y
@@ -757,7 +764,27 @@ Prefab:
     - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
         type: 2}
       propertyPath: FloorMask.m_Bits
-      value: 512
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: jumpingTolerance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50156304194450642, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: fallTolerance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: GroundMask.m_Bits
+      value: 1792
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
@@ -893,7 +920,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1228006745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6, y: 1.5, z: 0}
+  m_LocalPosition: {x: 1.09, y: 1.5, z: 0}
   m_LocalScale: {x: 2, y: 0.2, z: 2}
   m_Children:
   - {fileID: 1388259915}
@@ -1034,7 +1061,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1593102129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 249, y: -170, z: 0}
+  m_LocalPosition: {x: 290.5, y: -259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 876216}
@@ -1178,12 +1205,36 @@ Prefab:
     - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
         type: 2}
       propertyPath: FloorMask.m_Bits
-      value: 512
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
         type: 2}
       propertyPath: FloorLayerUsed
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790736915327534, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: jumpingTolerance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50156304194450642, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: fallTolerance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114963686108192222, guid: 7b09d3db061acd34690b6d9b06e56efd,
+        type: 2}
+      propertyPath: GroundMask.m_Bits
+      value: 1792
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b09d3db061acd34690b6d9b06e56efd, type: 2}
@@ -1381,7 +1432,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980321375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -249, y: 170, z: 0}
+  m_LocalPosition: {x: -290.5, y: 259, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 27479791}
