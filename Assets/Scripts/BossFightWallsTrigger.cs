@@ -40,5 +40,7 @@ public class BossFightWallsTrigger : MonoBehaviour {
 		}
 		yield return new WaitForSeconds(2f);
 		GetComponent<CameraLockingTrigger>().ReturnCameraToPlayer();
+		Destroy(leftWall);
+		Destroy(rightWall);
 	}
 }
