@@ -120,25 +120,25 @@ public class EnemyMovement : AbstractMovement
 			StartCoroutine("JumpCD");
 		}
 
-		if (ShouldFall())
-		{
-			isFalling = true;
-			if (FloorLayerUsed)
-			{
-				StartCoroutine(FallThroughPlatform());
-			}
-			else
-			{
-				Collider2D[] contacts = new Collider2D[1];
-				Physics2D.GetContacts(Collider, filter, contacts);
-				//Debug.Log(contacts[0].name);
-				if (!(contacts.Length == 0) /*&& contacts[0].gameObject.tag.Equals("Ground")*/)
-				{
-					StartCoroutine(FallThroughPlatform(contacts[0]));
-				}
-				Debug.Log("number of enemy contacts: " + contacts.Length);
-			}
-		}
+//		if (ShouldFall())
+//		{
+//			isFalling = true;
+//			if (FloorLayerUsed)
+//			{
+//				StartCoroutine(FallThroughPlatform());
+//			}
+//			else
+//			{
+//				Collider2D[] contacts = new Collider2D[1];
+//				Physics2D.GetContacts(Collider, filter, contacts);
+//				//Debug.Log(contacts[0].name);
+//				if (!(contacts.Length == 0) /*&& contacts[0].gameObject.tag.Equals("Ground")*/)
+//				{
+//					StartCoroutine(FallThroughPlatform(contacts[0]));
+//				}
+//				Debug.Log("number of enemy contacts: " + contacts.Length);
+//			}
+//		}
 	}
 
 	protected virtual void CalculateTotalVelocity()
@@ -247,7 +247,7 @@ public class EnemyMovement : AbstractMovement
 		Rb.AddForce(new Vector2(0, jumpForce));
 	}
 
-	bool ShouldFall()
+	protected override bool ShouldPassThroughPlatform()
 	{
 		float playerPositionY = Player.transform.position.y;
 		float enemyPositionY = this.transform.position.y;
