@@ -293,7 +293,7 @@ public class EnemyMovement : AbstractMovement
 		//	return false;
 
 		// casts a ray to find an enemy, if hitEnemy contains info on an enemy, then it delays moving to hopefully not collide an another enemy.
-		RaycastHit2D hitEnemy = Physics2D.Raycast(rayOrigin, rayDir, rayDistance, gameObject.layer);
+		RaycastHit2D hitEnemy = Physics2D.Raycast(rayOrigin, rayDir, rayDistance, 1 << gameObject.layer);
 		if (hitEnemy.collider != null)
 		{
 			if (IsGrounded())

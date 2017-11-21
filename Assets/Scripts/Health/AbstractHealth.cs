@@ -41,6 +41,10 @@ public abstract class AbstractHealth : MonoBehaviour
 		{
 			Health += healthChangeEvent.HealthDelta;
 		}
+		else
+		{
+			Debug.Log("Damage cancelled.");
+		}
 
 		return !healthChangeEvent.Cancelled;
 	}

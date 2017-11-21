@@ -92,7 +92,7 @@ MonoBehaviour:
   Hostile: 1
   Damage: 1
   Lifespan: 30
-  KnockbackBaseStrength: 100
+  KnockbackBaseStrength: 1.81
 --- !u!212 &212688948090053010
 SpriteRenderer:
   m_ObjectHideFlags: 1

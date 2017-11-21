@@ -33,11 +33,9 @@ public class BossFightWallsTrigger : MonoBehaviour {
 		leftWall = Instantiate(WallToCreate, LeftWallPosition, Quaternion.identity);
 		rightWall = Instantiate(WallToCreate, RightWallPosition, Quaternion.identity);
 		inBossFight = true;
-		BossInstance = Instantiate(Boss, BossPosition, Quaternion.identity); 
-		while(BossInstance != null)
-		{
-			yield return null;
-		}
+		BossInstance = Instantiate(Boss, BossPosition, Quaternion.identity);
+		
+		yield return new WaitWhile(() => BossInstance != null);
 		yield return new WaitForSeconds(2f);
 		GetComponent<CameraLockingTrigger>().ReturnCameraToPlayer();
 		Destroy(leftWall);
