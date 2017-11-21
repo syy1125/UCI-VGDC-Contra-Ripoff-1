@@ -5,6 +5,7 @@ public class PlayerHealth : AbstractHealth
 {
     bool Invincible = false;
     int InvincibilityTime = 3; //how long player is invincible in seconds
+	
 	private void Reset()
 	{
 		MaxHealth = 3;
@@ -17,7 +18,8 @@ public class PlayerHealth : AbstractHealth
 	}
     void OnCollisionEnter2D (Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+	    Debug.Log("Collision detected.");
+        if (collision.gameObject.CompareTag("Enemy") && !Invincible)
         {
             Debug.Log("Collided w/ Enemy");
             Damage(collision.gameObject, 1);

@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: 1c67606f1d596b342bfbe0f4bf7049eb
-timeCreated: 1509595979
+timeCreated: 1511233612
 licenseType: Free
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HealthCellPrefab: {fileID: 1460113627444266, guid: 3fa35999c1d7a0242b6d07a858c3fe1c,
+      type: 2}
+  - Health: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
