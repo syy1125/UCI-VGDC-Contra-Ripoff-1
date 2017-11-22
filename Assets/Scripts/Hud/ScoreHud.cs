@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
-public class ScoreHud : MonoBehaviour
+public class ScoreHud : Singleton<ScoreHud>
 {
 	/// <summary>
 	/// Will automatically be set the the text component's content during initialization.

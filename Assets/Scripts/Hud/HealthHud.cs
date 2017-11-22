@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthHud : MonoBehaviour
+public class HealthHud : Singleton<HealthHud>
 {
 	public GameObject HealthCellPrefab;
 	public Color HealthyColor = Color.red;
