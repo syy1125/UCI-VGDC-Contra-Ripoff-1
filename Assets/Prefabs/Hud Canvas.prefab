@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 222027625335509432}
   - component: {fileID: 114789976719350738}
   - component: {fileID: 114775330178527088}
-  - component: {fileID: 114354582031231384}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -137,33 +136,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114354582031231384
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1808879916281590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232c5dc75de451e40b8cc4f3ac13dec2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnScoreChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114775330178527088}
-        m_MethodName: SetScore
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: ScoreChangeEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114543244743540248
 MonoBehaviour:
   m_ObjectHideFlags: 1
