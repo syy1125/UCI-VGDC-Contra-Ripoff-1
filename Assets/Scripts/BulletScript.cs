@@ -30,6 +30,8 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            //Note: Eventually need ways to check if enemy is a boss
+            ScoreHud.Instance.SetScore(0);  //How many points should the player get for killing an enemy?
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

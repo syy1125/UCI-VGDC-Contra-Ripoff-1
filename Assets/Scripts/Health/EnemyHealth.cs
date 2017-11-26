@@ -6,6 +6,6 @@ public class EnemyHealth : AbstractHealth
 {
 	protected override void OnDeath()
 	{
-		Destroy(gameObject);
+        Destroy(gameObject);
 	}
 }

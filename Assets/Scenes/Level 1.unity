@@ -320,7 +320,7 @@ Transform:
   - {fileID: 821095306}
   - {fileID: 304023613}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &27119535
 GameObject:
@@ -572,7 +572,7 @@ Transform:
   - {fileID: 445020839}
   - {fileID: 1182536117}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &134907288
 GameObject:
@@ -782,7 +782,7 @@ Transform:
   - {fileID: 2063206464}
   - {fileID: 1922693770}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &139462514
 GameObject:
@@ -1062,7 +1062,7 @@ Transform:
   - {fileID: 497765115}
   - {fileID: 934938563}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &183394262
 GameObject:
@@ -1108,9 +1108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 1047592397}
-  PassThroughTrigger: {fileID: 183394265}
 --- !u!68 &183394265
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1243,9 +1240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 1256813080}
-  PassThroughTrigger: {fileID: 254666086}
 --- !u!68 &254666086
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1518,9 +1512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 21090276}
-  PassThroughTrigger: {fileID: 304023615}
 --- !u!68 &304023615
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1583,9 +1574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 647222555}
-  PassThroughTrigger: {fileID: 327554909}
 --- !u!68 &327554909
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1648,9 +1636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 630453781}
-  PassThroughTrigger: {fileID: 371039604}
 --- !u!68 &371039604
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2273,9 +2258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 994233177}
-  PassThroughTrigger: {fileID: 513450800}
 --- !u!68 &513450800
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2338,9 +2320,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 778587690}
-  PassThroughTrigger: {fileID: 538480561}
 --- !u!68 &538480561
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2497,7 +2476,7 @@ Transform:
   - {fileID: 1504672859}
   - {fileID: 1612606077}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557982617
 GameObject:
@@ -2777,7 +2756,7 @@ Transform:
   - {fileID: 2064039866}
   - {fileID: 1505538426}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630453779
 GameObject:
@@ -2917,7 +2896,7 @@ Transform:
   - {fileID: 139462515}
   - {fileID: 371039602}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647222553
 GameObject:
@@ -3057,7 +3036,7 @@ Transform:
   - {fileID: 1106897806}
   - {fileID: 327554907}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676490433
 GameObject:
@@ -3197,7 +3176,7 @@ Transform:
   - {fileID: 134907289}
   - {fileID: 1328671263}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &708337272
 GameObject:
@@ -3803,9 +3782,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 383320914}
-  PassThroughTrigger: {fileID: 882489932}
 --- !u!68 &882489932
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3938,9 +3914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 557982619}
-  PassThroughTrigger: {fileID: 920361470}
 --- !u!68 &920361470
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4003,9 +3976,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 172681650}
-  PassThroughTrigger: {fileID: 934938565}
 --- !u!68 &934938565
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4024,6 +3994,106 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.5, y: 0.5}
   - {x: 0.5, y: 0.5}
+--- !u!1001 &954476987
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 320.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 217
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b87218de8a5e75345af86a5df0ae1357, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &994233175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4372,7 +4442,7 @@ Transform:
   - {fileID: 486006267}
   - {fileID: 183394263}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1106897805
 GameObject:
@@ -4638,9 +4708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 115178093}
-  PassThroughTrigger: {fileID: 1182536119}
 --- !u!68 &1182536119
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4773,9 +4840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 2078438287}
-  PassThroughTrigger: {fileID: 1206465268}
 --- !u!68 &1206465268
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -5002,7 +5066,7 @@ Transform:
   - {fileID: 1739862185}
   - {fileID: 1763642246}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256813078
 GameObject:
@@ -5142,7 +5206,7 @@ Transform:
   - {fileID: 1411172854}
   - {fileID: 254666084}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271519318
 GameObject:
@@ -5328,9 +5392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 764148785}
-  PassThroughTrigger: {fileID: 1307382275}
 --- !u!68 &1307382275
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -5398,9 +5459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 676490435}
-  PassThroughTrigger: {fileID: 1328671265}
 --- !u!68 &1328671265
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -5603,9 +5661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 279696164}
-  PassThroughTrigger: {fileID: 1453127925}
 --- !u!68 &1453127925
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -5808,9 +5863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 567564924}
-  PassThroughTrigger: {fileID: 1505538428}
 --- !u!68 &1505538428
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -5967,7 +6019,7 @@ Transform:
   - {fileID: 1415428776}
   - {fileID: 2108140800}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1612606076
 GameObject:
@@ -6013,9 +6065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 547285702}
-  PassThroughTrigger: {fileID: 1612606079}
 --- !u!68 &1612606079
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -6148,9 +6197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 1241573722}
-  PassThroughTrigger: {fileID: 1763642248}
 --- !u!68 &1763642248
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -6283,9 +6329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 135600369}
-  PassThroughTrigger: {fileID: 1922693772}
 --- !u!68 &1922693772
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -6862,7 +6905,7 @@ Transform:
   - {fileID: 157071043}
   - {fileID: 1206465266}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089709062
 GameObject:
@@ -6978,9 +7021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ffd746fc9aa0468dc61c8f266d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  PlatformCollider: {fileID: 1542518662}
-  PassThroughTrigger: {fileID: 2108140802}
 --- !u!68 &2108140802
 EdgeCollider2D:
   m_ObjectHideFlags: 0

@@ -17,19 +17,19 @@ public class PlayerHealth : AbstractHealth
 		Debug.Log("Player died!");
 	}
 
-//	void OnCollisionEnter2D(Collision2D collision)
-//	{
-//		Debug.Log("Collision detected.");
-//		if (collision.gameObject.CompareTag("Enemy") && !Invincible)
-//		{
-//			Debug.Log("Collided w/ Enemy");
-//			Damage(collision.gameObject, 1);
-//			Invincible = true;
-//			Invoke("ResetInvincibility", InvincibilityTime);
-//		}
-//	}
+    //void oncollisionenter2d(Collision2d collision)
+    //{
 
-	void ResetInvincibility()
+    //    if (collision.gameobject.comparetag("enemy") && !Invincible)
+    //    {
+
+    //        Damage(collision.gameobject, 1);
+    //        Invincible = true;
+    //        Invoke("resetinvincibility", Invincibilitytime);
+    //    }
+    //}
+
+    void ResetInvincibility()
 	{
 		Invincible = false;
 	}

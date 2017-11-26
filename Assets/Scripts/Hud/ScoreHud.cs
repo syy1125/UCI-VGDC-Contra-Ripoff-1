@@ -8,6 +8,7 @@ public class ScoreHud : Singleton<ScoreHud>
 	private string _template;
 
 	private Text _textComponent;
+    public int ScoreCount = 0;
 
 	private void Start()
 	{
@@ -16,11 +17,12 @@ public class ScoreHud : Singleton<ScoreHud>
 		// The text component's current text is to be used as template.
 		_template = _textComponent.text;
 
-		SetScore(0);
+		SetScore(ScoreCount);
 	}
 
 	public void SetScore(int score)
 	{
-		_textComponent.text = string.Format(_template, score);
+        ScoreCount += score;
+		_textComponent.text = string.Format(_template, ScoreCount);
 	}
 }
