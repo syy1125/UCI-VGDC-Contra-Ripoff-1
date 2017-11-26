@@ -102,7 +102,7 @@ MonoBehaviour:
   MovementSpeed: 0.4
   GroundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1792
   PlatformDetectorMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -113,12 +113,14 @@ MonoBehaviour:
   Floor: {fileID: 0}
   FloorMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   FloorLayerUsed: 1
-  jumpForce: 300
-  jumpingTolerance: 1
+  jumpForce: 200
+  jumpingTolerance: 5
   timeBetweenJumps: 3
   fallTolerance: 2
+  SafeToJumpDetectionDistance: 1.6
+  FallDetectionDistance: 10
   jumpCooldown: 1.8
 --- !u!212 &212334184813865510
 SpriteRenderer:
@@ -129,6 +131,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -144,6 +147,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
