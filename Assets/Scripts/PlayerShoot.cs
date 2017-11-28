@@ -33,9 +33,11 @@ public class PlayerShoot : MonoBehaviour {
         }
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Reloading...");
-			ammo = 6;
-            Debug.Log("Reloaded.");
+			if (ammo <= 0) {
+				Debug.Log ("Reloading...");
+				ammo = 6;
+				Debug.Log ("Reloaded.");
+			}
         }
     }
 
