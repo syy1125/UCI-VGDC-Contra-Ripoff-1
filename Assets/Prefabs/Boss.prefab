@@ -107,7 +107,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   DefaultLayer: 0
-  IgnorePlatformLayer: 0
+  IgnorePlatformLayer: 11
   MoveThreshold: 0.1
   Player: {fileID: 0}
   Floor: {fileID: 0}
@@ -121,6 +121,7 @@ MonoBehaviour:
   fallTolerance: 2
   SafeToJumpDetectionDistance: 1.6
   FallDetectionDistance: 10
+  currentGroundYScale: 0.2
   jumpCooldown: 1.8
 --- !u!212 &212334184813865510
 SpriteRenderer:

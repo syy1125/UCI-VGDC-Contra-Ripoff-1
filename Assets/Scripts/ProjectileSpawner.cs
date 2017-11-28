@@ -26,8 +26,9 @@ public class ProjectileSpawner : MonoBehaviour {
 		{
 			GameObject p = Instantiate (proj, this.transform.position, Quaternion.identity, this.transform);
 			BulletScript temp = p.GetComponent<BulletScript> ();
-			temp.Speed = BulletSpeed;
-			temp.direction = BulletDirection;
+			p.GetComponent<Rigidbody2D>().velocity = BulletDirection.normalized * BulletSpeed;
+//			temp.Speed = BulletSpeed;
+//			temp.direction = BulletDirection;
 			yield return new WaitForSeconds (CD);
 		}
 	}

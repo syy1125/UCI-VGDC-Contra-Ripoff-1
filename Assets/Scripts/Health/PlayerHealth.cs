@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : AbstractHealth
 {
@@ -13,8 +14,8 @@ public class PlayerHealth : AbstractHealth
 
 	protected override void OnDeath()
 	{
-		// Placeholder text until formal player death mechanism are discussed.
-		Debug.Log("Player died!");
+		// Relaod scene
+		SceneManager.LoadScene("Main");
 	}
 
     //void oncollisionenter2d(Collision2d collision)
