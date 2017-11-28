@@ -15,7 +15,7 @@ public class PlayerHealth : AbstractHealth
 	protected override void OnDeath()
 	{
 		// Relaod scene
-		SceneManager.LoadScene("Main");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
     //void oncollisionenter2d(Collision2d collision)
