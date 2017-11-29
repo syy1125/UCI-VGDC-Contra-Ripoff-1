@@ -18,18 +18,6 @@ public class PlayerHealth : AbstractHealth
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-    //void oncollisionenter2d(Collision2d collision)
-    //{
-
-    //    if (collision.gameobject.comparetag("enemy") && !Invincible)
-    //    {
-
-    //        Damage(collision.gameobject, 1);
-    //        Invincible = true;
-    //        Invoke("resetinvincibility", Invincibilitytime);
-    //    }
-    //}
-
     void ResetInvincibility()
 	{
 		Invincible = false;
