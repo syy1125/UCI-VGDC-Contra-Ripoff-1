@@ -19,7 +19,10 @@ public class ProjectileSpawner : MonoBehaviour {
 		while (true) 
 		{
 			GameObject p = Instantiate (proj, transform.position, Quaternion.identity, transform);
-			p.GetComponent<Rigidbody2D>().velocity = BulletDirection.normalized * BulletSpeed;
+			BulletScript b = p.GetComponent<BulletScript> ();
+			b.direction = BulletDirection;
+			b.Speed = BulletSpeed;
+			//p.GetComponent<Rigidbody2D>().velocity = BulletDirection.normalized * BulletSpeed;
 			yield return new WaitForSeconds (CD);
 		}
 	}

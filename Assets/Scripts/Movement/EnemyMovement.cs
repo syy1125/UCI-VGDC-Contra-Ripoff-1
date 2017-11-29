@@ -68,7 +68,7 @@ public class EnemyMovement : AbstractMovement
 		base.Reset();
 
 		MoveThreshold = MovementSpeed;
-		Player = GameObject.FindGameObjectWithTag("Player");
+		Player = PlayerMovement.instance;
 	}
 
 	private float CalcXVelocity()
@@ -114,8 +114,11 @@ public class EnemyMovement : AbstractMovement
 				currentGroundYScale = 0.2f;
 		}
 
-		Rb.velocity = new Vector2(CalcXVelocity(), Rb.velocity.y);
-		Debug.Log(gameObject.name + ": velocity = " + Rb.velocity);
+		if (Mathf.Abs (Rb.velocity.x) <= MovementSpeed)
+			Rb.velocity = new Vector2 (CalcXVelocity (), Rb.velocity.y);
+		else
+			Rb.AddForce (new Vector2 (CalcXVelocity (), Rb.velocity.y));
+//		Debug.Log(gameObject.name + ": velocity = " + Rb.velocity);
 
 		if (ShouldJump() && jumpCooldown <= 0)
 		{
@@ -272,7 +275,7 @@ public class EnemyMovement : AbstractMovement
 	bool IsSafeToChangePlatforms(Vector2 rayOrigin, Vector2 rayDir, float rayDistance)
 	{
 		bool safe = true;
-		Debug.Log(name + ": rayOrigin = " + rayOrigin + ", " + transform.lossyScale.y);
+//		Debug.Log(name + ": rayOrigin = " + rayOrigin + ", " + transform.lossyScale.y);
 		// casts a ray to get info on the first platform the ray hits within rayDistance
 		//RaycastHit2D hitPlatform = Physics2D.Raycast(rayOrigin, rayDir, rayDistance, GroundMask.value);
 		RaycastHit2D hitPlatform = Physics2D.Raycast(rayOrigin, rayDir, Mathf.Infinity, GroundMask.value);
