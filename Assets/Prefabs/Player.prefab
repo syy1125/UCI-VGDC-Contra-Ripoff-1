@@ -104,18 +104,7 @@ MonoBehaviour:
   MaxHealth: 3
   OnDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114274274156847596}
-        m_MethodName: Knockback
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnHeal:
@@ -125,18 +114,7 @@ MonoBehaviour:
       PublicKeyToken=null
   OnHealthChange:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UpdateHealthDisplay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114241984033030202
@@ -151,8 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4238668706006566}
-  cooldown: 0.5
+  ammo: 3
   Projectile: {fileID: 1588932413359308, guid: 3fdc34b86c2c71541a068c9b6e7f35fe, type: 2}
+  ammocount: {fileID: 0}
 --- !u!114 &114274274156847596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,8 +150,10 @@ MonoBehaviour:
   PlatformDetectorMask:
     serializedVersion: 2
     m_Bits: 1024
-  DefaultLayer: 0
-  IgnorePlatformLayer: 11
+  DefaultLayer:
+    value: 0
+  IgnorePlatformLayer:
+    value: 11
   hasDoubleJump: 1
   jumpForce: 120
   MinResistance: 0.1

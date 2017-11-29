@@ -106,8 +106,10 @@ MonoBehaviour:
   PlatformDetectorMask:
     serializedVersion: 2
     m_Bits: 1024
-  DefaultLayer: 0
-  IgnorePlatformLayer: 11
+  DefaultLayer:
+    value: 0
+  IgnorePlatformLayer:
+    value: 11
   MoveThreshold: 0.1
   Player: {fileID: 0}
   Floor: {fileID: 0}
