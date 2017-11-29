@@ -14,21 +14,12 @@ public class ProjectileSpawner : MonoBehaviour {
 		StartCoroutine (Shoot ());
 	}
 	
-	// Update is called once per frame
-	void Update () 
-	{
-		
-	}
-
 	IEnumerator Shoot()
 	{
 		while (true) 
 		{
-			GameObject p = Instantiate (proj, this.transform.position, Quaternion.identity, this.transform);
-			BulletScript temp = p.GetComponent<BulletScript> ();
+			GameObject p = Instantiate (proj, transform.position, Quaternion.identity, transform);
 			p.GetComponent<Rigidbody2D>().velocity = BulletDirection.normalized * BulletSpeed;
-//			temp.Speed = BulletSpeed;
-//			temp.direction = BulletDirection;
 			yield return new WaitForSeconds (CD);
 		}
 	}

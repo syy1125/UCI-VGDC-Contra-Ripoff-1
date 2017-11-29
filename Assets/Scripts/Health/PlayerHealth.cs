@@ -23,7 +23,7 @@ public class PlayerHealth : AbstractHealth
 		Invincible = false;
 	}
 
-	public void OnDamage(HealthChangeEvent e)
+	public void OnReceiveDamage(HealthChangeEvent e)
 	{
 		if (Invincible)
 		{

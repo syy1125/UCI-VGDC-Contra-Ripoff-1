@@ -123,26 +123,6 @@ public class EnemyMovement : AbstractMovement
 			jumpCooldown = timeBetweenJumps;
 			StartCoroutine("JumpCD");
 		}
-
-//		if (ShouldFall())
-//		{
-//			isFalling = true;
-//			if (FloorLayerUsed)
-//			{
-//				StartCoroutine(FallThroughPlatform());
-//			}
-//			else
-//			{
-//				Collider2D[] contacts = new Collider2D[1];
-//				Physics2D.GetContacts(Collider, filter, contacts);
-//				//Debug.Log(contacts[0].name);
-//				if (!(contacts.Length == 0) /*&& contacts[0].gameObject.tag.Equals("Ground")*/)
-//				{
-//					StartCoroutine(FallThroughPlatform(contacts[0]));
-//				}
-//				Debug.Log("number of enemy contacts: " + contacts.Length);
-//			}
-//		}
 	}
 
 	protected virtual void CalculateTotalVelocity()
@@ -196,16 +176,16 @@ public class EnemyMovement : AbstractMovement
 	{
 		float collisionX = collision.transform.position.x;
 		float collisionY = collision.transform.position.y;
-		float posX = this.transform.position.x;
-		float posY = this.transform.position.y;
+		float posX = transform.position.x;
+		float posY = transform.position.y;
 		// if object lands on top of another enemy, then the object should move itself to be back on ground level
 		if ((collision.collider.tag.Equals("Enemy") || collision.collider.tag.Equals("Player")) /*&& collisionY < posY 
 			&& Mathf.Abs(collisionX - posX) < (this.transform.lossyScale.x / 2.0f)*/
 			&& !IsGrounded())
 		{
-			transform.Translate(new Vector3(transform.position.x - collisionX, transform.position.y - collisionY /*collisionY + 0.01f*/));
+			transform.Translate(new Vector3(posX - collisionX, posY - collisionY /*collisionY + 0.01f*/));
 			if (!IsGrounded())
-				transform.Translate(new Vector3(collisionX - transform.position.x, collisionY - transform.position.y));
+				transform.Translate(new Vector3(collisionX - posX, collisionY - posY));
 			//transform.Translate(new Vector3(collisionX + 0.1f, transform.position.y - collisionY /*+ 0.5f*/));
 		}
 	}

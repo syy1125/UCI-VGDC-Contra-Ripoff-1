@@ -16,7 +16,7 @@ public class CameraLockingTrigger : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag.Equals("Player") && ToPanTo != null)
+        if (col.gameObject.tag.Equals("Player"))
             cam.PanTo(ToPanTo);
     }
     void OnTriggerExit2D(Collider2D col)
