@@ -119,9 +119,11 @@ public class EnemyMovement : AbstractMovement
 
 		if (ShouldJump() && jumpCooldown <= 0)
 		{
-			AttemptJump();
-			jumpCooldown = timeBetweenJumps;
-			StartCoroutine("JumpCD");
+			if (AttemptJump())
+			{
+				jumpCooldown = timeBetweenJumps;
+				StartCoroutine("JumpCD");
+			}
 		}
 
 //		if (ShouldFall())
@@ -240,14 +242,15 @@ public class EnemyMovement : AbstractMovement
 		return jump;
 	}
 
-	void AttemptJump()
+	bool AttemptJump()
 	{
 		if (!IsGrounded())
 		{
 			Debug.Log(name + " was not grounded.");
-			return;
+			return false;
 		}
 		Jump();
+		return true;
 	}
 
 	void Jump()

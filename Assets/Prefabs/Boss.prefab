@@ -115,13 +115,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   FloorLayerUsed: 1
-  jumpForce: 200
-  jumpingTolerance: 5
+  jumpForce: 250
+  jumpingTolerance: 10
   timeBetweenJumps: 3
   fallTolerance: 2
   SafeToJumpDetectionDistance: 1.6
   FallDetectionDistance: 10
-  jumpCooldown: 1.8
+  currentGroundYScale: 0.2
+  jumpCooldown: 0
 --- !u!212 &212334184813865510
 SpriteRenderer:
   m_ObjectHideFlags: 1
