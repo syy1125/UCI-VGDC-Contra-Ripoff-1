@@ -6,6 +6,7 @@ public class EnemyHealth : AbstractHealth
 {
 	protected override void OnDeath()
 	{
-        Destroy(gameObject);
+		ScoreHud.Instance.SetScore (10);
+		Destroy (this.gameObject);
 	}
 }

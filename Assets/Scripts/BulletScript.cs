@@ -26,7 +26,7 @@ public class BulletScript : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -37,5 +37,5 @@ public class BulletScript : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-    }
+    }*/
 }

@@ -49,8 +49,12 @@ public class DamageProjectile : MonoBehaviour
 
 	private void Knockback(GameObject target)
 	{
-		Vector2 knockbackDirection = target.transform.position - gameObject.transform.position;
-		Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+		//Vector2 knockbackDirection = this.GetComponent<BulletScript> ().direction;
+		if (target.GetComponent<BoxCollider2D> () == null)
+			return;
+		Vector2 knockbackDirection = target.GetComponent<BoxCollider2D>().bounds.ClosestPoint(this.gameObject.transform.position) - gameObject.transform.position;
+		Debug.Log (knockbackDirection.normalized);
+		//Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
 		target.GetComponent<Rigidbody2D> ().AddForce (knockbackDirection.normalized * KnockbackBaseStrength, ForceMode2D.Impulse);
 		//Vector2 knockbackForce = (velocity + (Vector2) Vector3.Project(velocity, knockbackDirection)) * KnockbackBaseStrength;
 		//target.GetComponent<Rigidbody2D>().AddForce(knockbackForce);

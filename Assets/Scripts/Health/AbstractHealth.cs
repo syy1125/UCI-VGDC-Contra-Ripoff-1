@@ -27,8 +27,9 @@ public abstract class AbstractHealth : MonoBehaviour
 		}
 	}
 
-	private void Start()
+	void Start()
 	{
+		Debug.Log ("abstract health start");
 		Health = MaxHealth;
 	}
 

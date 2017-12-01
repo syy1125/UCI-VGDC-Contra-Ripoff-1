@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
+  direction: {x: 0, y: 0}
 --- !u!114 &114461513557823440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,7 +106,7 @@ MonoBehaviour:
   Hostile: 0
   Damage: 1
   Lifespan: 30
-  KnockbackBaseStrength: 100
+  KnockbackBaseStrength: 4
 --- !u!212 &212688948090053010
 SpriteRenderer:
   m_ObjectHideFlags: 1

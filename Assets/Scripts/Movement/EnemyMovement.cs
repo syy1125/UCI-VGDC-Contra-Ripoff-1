@@ -68,7 +68,7 @@ public class EnemyMovement : AbstractMovement
 		base.Reset();
 
 		MoveThreshold = MovementSpeed;
-		Player = GameObject.FindGameObjectWithTag("Player");
+		Player = PlayerMovement.instance;
 	}
 
 	private float CalcXVelocity()
@@ -114,8 +114,11 @@ public class EnemyMovement : AbstractMovement
 				currentGroundYScale = 0.2f;
 		}
 
-		Rb.velocity = new Vector2(CalcXVelocity(), Rb.velocity.y);
-		Debug.Log(gameObject.name + ": velocity = " + Rb.velocity);
+		if (Mathf.Abs (Rb.velocity.x) <= MovementSpeed)
+			Rb.velocity = new Vector2 (CalcXVelocity (), Rb.velocity.y);
+		else
+			Rb.AddForce (new Vector2 (CalcXVelocity (), Rb.velocity.y));
+//		Debug.Log(gameObject.name + ": velocity = " + Rb.velocity);
 
 		if (ShouldJump() && jumpCooldown <= 0)
 		{
@@ -125,26 +128,6 @@ public class EnemyMovement : AbstractMovement
 				StartCoroutine("JumpCD");
 			}
 		}
-
-//		if (ShouldFall())
-//		{
-//			isFalling = true;
-//			if (FloorLayerUsed)
-//			{
-//				StartCoroutine(FallThroughPlatform());
-//			}
-//			else
-//			{
-//				Collider2D[] contacts = new Collider2D[1];
-//				Physics2D.GetContacts(Collider, filter, contacts);
-//				//Debug.Log(contacts[0].name);
-//				if (!(contacts.Length == 0) /*&& contacts[0].gameObject.tag.Equals("Ground")*/)
-//				{
-//					StartCoroutine(FallThroughPlatform(contacts[0]));
-//				}
-//				Debug.Log("number of enemy contacts: " + contacts.Length);
-//			}
-//		}
 	}
 
 	protected virtual void CalculateTotalVelocity()
@@ -198,16 +181,16 @@ public class EnemyMovement : AbstractMovement
 	{
 		float collisionX = collision.transform.position.x;
 		float collisionY = collision.transform.position.y;
-		float posX = this.transform.position.x;
-		float posY = this.transform.position.y;
+		float posX = transform.position.x;
+		float posY = transform.position.y;
 		// if object lands on top of another enemy, then the object should move itself to be back on ground level
 		if ((collision.collider.tag.Equals("Enemy") || collision.collider.tag.Equals("Player")) /*&& collisionY < posY 
 			&& Mathf.Abs(collisionX - posX) < (this.transform.lossyScale.x / 2.0f)*/
 			&& !IsGrounded())
 		{
-			transform.Translate(new Vector3(transform.position.x - collisionX, transform.position.y - collisionY /*collisionY + 0.01f*/));
+			transform.Translate(new Vector3(posX - collisionX, posY - collisionY /*collisionY + 0.01f*/));
 			if (!IsGrounded())
-				transform.Translate(new Vector3(collisionX - transform.position.x, collisionY - transform.position.y));
+				transform.Translate(new Vector3(collisionX - posX, collisionY - posY));
 			//transform.Translate(new Vector3(collisionX + 0.1f, transform.position.y - collisionY /*+ 0.5f*/));
 		}
 	}
@@ -295,7 +278,7 @@ public class EnemyMovement : AbstractMovement
 	bool IsSafeToChangePlatforms(Vector2 rayOrigin, Vector2 rayDir, float rayDistance)
 	{
 		bool safe = true;
-		Debug.Log(name + ": rayOrigin = " + rayOrigin + ", " + transform.lossyScale.y);
+//		Debug.Log(name + ": rayOrigin = " + rayOrigin + ", " + transform.lossyScale.y);
 		// casts a ray to get info on the first platform the ray hits within rayDistance
 		//RaycastHit2D hitPlatform = Physics2D.Raycast(rayOrigin, rayDir, rayDistance, GroundMask.value);
 		RaycastHit2D hitPlatform = Physics2D.Raycast(rayOrigin, rayDir, Mathf.Infinity, GroundMask.value);

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50668367688373718}
   - component: {fileID: 58995547642180008}
   - component: {fileID: 114302057937266900}
-  - component: {fileID: 114059864277047492}
+  - component: {fileID: 114974246138432602}
   m_Layer: 0
   m_Name: NoDamageProjectile
   m_TagString: Untagged
@@ -79,18 +79,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &114059864277047492
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836701917848954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65b0c199fcbfc164d9edd1b48ba52754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0.5
 --- !u!114 &114302057937266900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,9 +91,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hostile: 1
-  Damage: 0
+  Damage: 1
   Lifespan: 30
-  KnockbackBaseStrength: 3
+  KnockbackBaseStrength: 2
+--- !u!114 &114974246138432602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836701917848954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b0c199fcbfc164d9edd1b48ba52754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0
+  direction: {x: 0, y: 0}
 --- !u!212 &212786333104104282
 SpriteRenderer:
   m_ObjectHideFlags: 1

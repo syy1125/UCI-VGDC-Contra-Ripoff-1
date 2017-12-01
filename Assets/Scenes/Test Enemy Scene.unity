@@ -170,28 +170,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123e3e7da8bd82f49af9cfdec33457a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 0
+  MovementSpeed: 0.79
   GroundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4864
   PlatformDetectorMask:
     serializedVersion: 2
-    m_Bits: 0
-  DefaultLayer: 0
-  IgnorePlatformLayer: 0
+    m_Bits: 1024
+  DefaultLayer:
+    value: 0
+  IgnorePlatformLayer:
+    value: 11
   MoveThreshold: 0
-  Player: {fileID: 0}
+  Player: {fileID: 1818643752192106, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
   Floor: {fileID: 0}
   FloorMask:
     serializedVersion: 2
-    m_Bits: 0
-  FloorLayerUsed: 0
+    m_Bits: 4864
+  FloorLayerUsed: 1
   jumpForce: 300
   jumpingTolerance: 1
   timeBetweenJumps: 3
   fallTolerance: 2
   SafeToJumpDetectionDistance: 1.6
   FallDetectionDistance: 10
+  currentGroundYScale: 0.2
   jumpCooldown: 0
 --- !u!4 &474491776 stripped
 Transform:
@@ -639,12 +642,12 @@ Prefab:
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 329
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 185
+      value: 174.5
       objectReference: {fileID: 0}
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}

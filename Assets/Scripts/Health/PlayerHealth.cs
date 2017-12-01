@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : AbstractHealth
 {
@@ -13,28 +14,16 @@ public class PlayerHealth : AbstractHealth
 
 	protected override void OnDeath()
 	{
-		// Placeholder text until formal player death mechanism are discussed.
-		Debug.Log("Player died!");
+		// Relaod scene
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
-
-    //void oncollisionenter2d(Collision2d collision)
-    //{
-
-    //    if (collision.gameobject.comparetag("enemy") && !Invincible)
-    //    {
-
-    //        Damage(collision.gameobject, 1);
-    //        Invincible = true;
-    //        Invoke("resetinvincibility", Invincibilitytime);
-    //    }
-    //}
 
     void ResetInvincibility()
 	{
 		Invincible = false;
 	}
 
-	public void OnDamage(HealthChangeEvent e)
+	public void OnReceiveDamage(HealthChangeEvent e)
 	{
 		if (Invincible)
 		{

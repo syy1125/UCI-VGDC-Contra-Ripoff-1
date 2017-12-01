@@ -10,8 +10,8 @@ public abstract class AbstractMovement : MonoBehaviour
 
 	public LayerMask GroundMask;
 	public LayerMask PlatformDetectorMask;
-	public int DefaultLayer;
-	public int IgnorePlatformLayer;
+	public SingleLayer DefaultLayer;
+	public SingleLayer IgnorePlatformLayer;
 
 	/*protected virtual void Start()
 	{
@@ -41,13 +41,13 @@ public abstract class AbstractMovement : MonoBehaviour
 		{
 			// Wait until script declares that it should fall through platforms, then do so.
 			yield return new WaitUntil(ShouldPassThroughPlatform);
-			gameObject.layer = IgnorePlatformLayer;
+			gameObject.layer = IgnorePlatformLayer.value;
 
 			// Wait until script declares that it should not fall through platforms
 			// then wait until it is no longer inside a platform (to avoid glitching).
 			yield return new WaitWhile(ShouldPassThroughPlatform);
 			yield return new WaitWhile(() => Collider.IsTouchingLayers(PlatformDetectorMask.value));
-			gameObject.layer = DefaultLayer;
+			gameObject.layer = DefaultLayer.value;
 		}
 	}
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerShoot : MonoBehaviour {
 
@@ -12,8 +13,9 @@ public class PlayerShoot : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start () 
+	{
+		ammo = 6;
 	}
 
     // Update is called once per frame
@@ -33,10 +35,14 @@ public class PlayerShoot : MonoBehaviour {
         }
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Reloading...");
-			ammo = 6;
-            Debug.Log("Reloaded.");
+			if (ammo <= 0) {
+				Debug.Log ("Reloading...");
+				ammo = 6;
+				Debug.Log ("Reloaded.");
+			}
         }
+		if(Input.GetKeyDown(KeyCode.R))
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void shootBullet()

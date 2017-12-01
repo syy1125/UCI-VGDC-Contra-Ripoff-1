@@ -12,13 +12,7 @@ public class BossFightWallsTrigger : MonoBehaviour {
 
     private GameObject leftWall;
     private GameObject rightWall;
-    private bool inBossFight;
 	private GameObject BossInstance;
-
-	void Start ()
-    {
-        inBossFight = false;
-	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -32,7 +26,6 @@ public class BossFightWallsTrigger : MonoBehaviour {
 	{
 		leftWall = Instantiate(WallToCreate, LeftWallPosition, Quaternion.identity);
 		rightWall = Instantiate(WallToCreate, RightWallPosition, Quaternion.identity);
-		inBossFight = true;
 		BossInstance = Instantiate(Boss, BossPosition, Quaternion.identity);
 		
 		yield return new WaitWhile(() => BossInstance != null);

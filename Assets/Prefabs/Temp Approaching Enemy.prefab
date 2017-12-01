@@ -100,13 +100,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 1
-  Rb: {fileID: 50156304194450642}
-  Collider: {fileID: 61007536808297104}
   GroundMask:
     serializedVersion: 2
     m_Bits: 256
+  PlatformDetectorMask:
+    serializedVersion: 2
+    m_Bits: 0
+  DefaultLayer:
+    value: 0
+  IgnorePlatformLayer:
+    value: 11
   MoveThreshold: 0.1
   Player: {fileID: 0}
+  Floor: {fileID: 0}
+  FloorMask:
+    serializedVersion: 2
+    m_Bits: 0
+  FloorLayerUsed: 0
+  jumpForce: 300
+  jumpingTolerance: 1
+  timeBetweenJumps: 3
+  fallTolerance: 2
+  SafeToJumpDetectionDistance: 1.6
+  FallDetectionDistance: 10
+  currentGroundYScale: 0.2
+  jumpCooldown: 0
 --- !u!212 &212794856367993038
 SpriteRenderer:
   m_ObjectHideFlags: 1
