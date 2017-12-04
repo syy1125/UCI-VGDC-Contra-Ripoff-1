@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 61694460682676058}
   - component: {fileID: 50387098981211318}
   - component: {fileID: 114974039584064996}
-  - component: {fileID: 114044620893590166}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -89,33 +88,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &114044620893590166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141434713633174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6a3ef26390de34289019cdb2f3442a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 30
-  OnDamage:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnHeal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnHealthChange:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114974039584064996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,10 +106,8 @@ MonoBehaviour:
   PlatformDetectorMask:
     serializedVersion: 2
     m_Bits: 1024
-  DefaultLayer:
-    value: 0
-  IgnorePlatformLayer:
-    value: 11
+  DefaultLayer: 0
+  IgnorePlatformLayer: 0
   MoveThreshold: 0.1
   Player: {fileID: 0}
   Floor: {fileID: 0}
@@ -145,14 +115,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   FloorLayerUsed: 1
-  jumpForce: 200
-  jumpingTolerance: 5
+  jumpForce: 250
+  jumpingTolerance: 10
   timeBetweenJumps: 3
   fallTolerance: 2
   SafeToJumpDetectionDistance: 1.6
   FallDetectionDistance: 10
   currentGroundYScale: 0.2
-  jumpCooldown: 1.8
+  jumpCooldown: 0
 --- !u!212 &212334184813865510
 SpriteRenderer:
   m_ObjectHideFlags: 1
