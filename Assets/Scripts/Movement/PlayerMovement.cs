@@ -6,6 +6,7 @@ public class PlayerMovement : AbstractMovement
 	public static GameObject instance;
 
 	[SerializeField] private bool hasDoubleJump;
+	private bool hasControl;
 	private bool _wasGrounded;
 
 	public int jumpForce = 150;
@@ -29,10 +30,15 @@ public class PlayerMovement : AbstractMovement
 		instance = gameObject;
 
 		hasDoubleJump = true;
+		hasControl = true;
 	}
 
 	private void Update()
 	{
+		if (!hasControl) 
+		{
+			return;
+		}
 		float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
 		bool grounded = IsGrounded();
@@ -105,5 +111,20 @@ public class PlayerMovement : AbstractMovement
 	protected override bool ShouldPassThroughPlatform()
 	{
 		return Input.GetAxisRaw("Vertical") < 0;
+	}
+
+	public void removePlayerControl()
+	{
+		hasControl = false;
+	}
+
+	public void returnPlayerControl()
+	{
+		hasControl = true;
+	}
+
+	public void stopPlayer()
+	{
+		Rb.velocity = Vector2.zero;
 	}
 }
