@@ -8,40 +8,37 @@ public class PlayerShoot : MonoBehaviour {
 
     public Transform firePoint;
     public int ammo;
+	private int maxAmmo = 6;
     public GameObject Projectile;
-	public Text ammocount;
+	public int timer = 1;
+	private bool reload_now = false;
 
 
 	// Use this for initialization
 	void Start () 
 	{
-		ammo = 6;
+		ammo = maxAmmo;
 	}
 
     // Update is called once per frame
-    void Update()
-    {
-		if (ammo > 0) {
-			ammocount.color = Color.white;
-			ammocount.text = ammo.ToString ();
-		} else {
-			ammocount.color = Color.red;
-			ammocount.text = "Right click to reload!";
-		}
-        if (Input.GetMouseButtonDown(0))
+	void Update(){
+		//if (ammo > 0) {
+			//ammocount.color = Color.white;
+			//ammocount.text = ammo.ToString ();
+		//} else {
+			//ammocount.color = Color.red;
+			//ammocount.text = "Right click to reload!";
+		//}
+		if (Input.GetMouseButtonDown(0) && ammo > 0 && reload_now == false)
         {
-            shootBullet();
-            ammo -= 1;
+			shootBullet ();
         }
         if (Input.GetMouseButtonDown(1))
         {
-			if (ammo <= 0) {
-				Debug.Log ("Reloading...");
-				ammo = 6;
-				Debug.Log ("Reloaded.");
-			}
-        }
-		if(Input.GetKeyDown(KeyCode.R))
+			reload_now = true;
+			StartCoroutine(reload_time());
+		}
+		if (Input.GetKeyDown(KeyCode.R))
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -56,6 +53,13 @@ public class PlayerShoot : MonoBehaviour {
             GameObject bullet = Instantiate(Projectile, firePoint.position, firePoint.rotation);
             BulletScript b = bullet.GetComponent<BulletScript>();
             b.direction = dir;
+			ammo--;
         }
     }
+
+	private IEnumerator reload_time(){
+		yield return new WaitForSeconds(timer);
+		ammo = maxAmmo;
+		reload_now = false;
+	}
 }
