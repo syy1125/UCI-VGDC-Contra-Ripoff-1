@@ -14,8 +14,7 @@ public class PlayerHealth : AbstractHealth
 
 	protected override void OnDeath()
 	{
-		// Relaod scene
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		DeathScript.Instance.Show();
 	}
 
     void ResetInvincibility()
