@@ -10,14 +10,28 @@ public class BossFightWallsTrigger : MonoBehaviour {
     public Vector3 LeftWallPosition;
 	public Vector3 BossPosition;
 
+	public Vector3 ToPanTo;
+
+	private Camera mainCamera;
+	private CameraController cam;
+
     private GameObject leftWall;
     private GameObject rightWall;
 	private GameObject BossInstance;
+	private bool isDone;
+
+	void Start()
+	{
+		mainCamera = Camera.main;
+		cam = mainCamera.GetComponent<CameraController>();
+		isDone = false;
+	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag.Equals("Player"))
+        if (col.gameObject.tag.Equals("Player") && !isDone)
         {
+			cam.PanTo(ToPanTo);
 			StartCoroutine(BossFight());
         }
     }
@@ -30,8 +44,10 @@ public class BossFightWallsTrigger : MonoBehaviour {
 		
 		yield return new WaitWhile(() => BossInstance != null);
 		yield return new WaitForSeconds(2f);
-		GetComponent<CameraLockingTrigger>().ReturnCameraToPlayer();
+		cam.PanTo (PlayerMovement.instance.gameObject.transform.position);
+		cam.toFollow = PlayerMovement.instance;
 		Destroy(leftWall);
 		Destroy(rightWall);
+		isDone = true;
 	}
 }

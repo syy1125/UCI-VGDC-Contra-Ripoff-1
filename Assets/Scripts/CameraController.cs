@@ -14,7 +14,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         InversePanSpeed = 1 / panSpeed;
-        Debug.Log(InversePanSpeed);
         isPanning = false;
     }
 
@@ -34,6 +33,8 @@ public class CameraController : MonoBehaviour
 
     private IEnumerator Pan(Vector3 pos)
     {
+		PlayerMovement.instance.GetComponent<PlayerMovement> ().removePlayerControl ();
+		PlayerMovement.instance.GetComponent<PlayerMovement> ().stopPlayer ();
         isPanning = true;
         float sqrRemainingDistance = (transform.position - pos).sqrMagnitude;
         while (sqrRemainingDistance > float.Epsilon)
@@ -44,6 +45,7 @@ public class CameraController : MonoBehaviour
             yield return null;
         }
         isPanning = false;
+		PlayerMovement.instance.GetComponent<PlayerMovement> ().returnPlayerControl ();
 
     }
 
