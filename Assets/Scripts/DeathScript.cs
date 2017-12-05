@@ -13,10 +13,12 @@ public class DeathScript : Singleton<DeathScript>
 		{
 			t.gameObject.SetActive(true);
 		}
+		Time.timeScale = 0;
 	}
 
 	public void Restart()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		Time.timeScale = 1;
 	}
 }
