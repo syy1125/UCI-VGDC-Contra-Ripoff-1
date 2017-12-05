@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour {
 
     public Transform firePoint;
     public int ammo;
-	private int maxAmmo = 6;
+	public int maxAmmo = 6;
     public GameObject Projectile;
 	public int timer = 1;
 	private bool reload_now = false;
@@ -18,6 +18,7 @@ public class PlayerShoot : MonoBehaviour {
 	void Start () 
 	{
 		ammo = maxAmmo;
+		AmmoHud.Instance.UpdateAmmoDisplay();
 	}
 
     // Update is called once per frame
@@ -54,6 +55,8 @@ public class PlayerShoot : MonoBehaviour {
             BulletScript b = bullet.GetComponent<BulletScript>();
             b.direction = dir;
 			ammo--;
+	        
+	        AmmoHud.Instance.UpdateAmmoDisplay();
         }
     }
 
@@ -61,5 +64,6 @@ public class PlayerShoot : MonoBehaviour {
 		yield return new WaitForSeconds(timer);
 		ammo = maxAmmo;
 		reload_now = false;
+		AmmoHud.Instance.UpdateAmmoDisplay();
 	}
 }

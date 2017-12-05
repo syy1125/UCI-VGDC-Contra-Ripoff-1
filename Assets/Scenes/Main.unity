@@ -650,15 +650,30 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224825723784950578, guid: b87218de8a5e75345af86a5df0ae1357,
+    - target: {fileID: 114037164731981214, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: ShootScript
+      value: 
+      objectReference: {fileID: 2082183083}
+    - target: {fileID: 224046676980676924, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.x
       value: 247
       objectReference: {fileID: 0}
+    - target: {fileID: 224046676980676924, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -114
+      objectReference: {fileID: 0}
+    - target: {fileID: 224825723784950578, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -247
+      objectReference: {fileID: 0}
     - target: {fileID: 224825723784950578, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -169
+      value: 169
       objectReference: {fileID: 0}
     - target: {fileID: 114649170604468354, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
@@ -1198,9 +1213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0172737a2d7c154b95fd180a558e88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ToPanTo: {x: 4, y: 1, z: 0}
-  mainCamera: {fileID: 0}
-  cam: {fileID: 0}
 --- !u!61 &1537056300
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1814,6 +1826,12 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 61087975188618372, guid: 8e0762839b0aa80419a666c22c8f799d,
     type: 2}
   m_PrefabInternal: {fileID: 1673791043}
+--- !u!114 &2082183083 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114241984033030202, guid: 8e0762839b0aa80419a666c22c8f799d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1673791043}
+  m_Script: {fileID: 11500000, guid: 316f3462fb25013409f51ff028d73865, type: 3}
 --- !u!1 &2137231777
 GameObject:
   m_ObjectHideFlags: 0
