@@ -20,7 +20,12 @@ public class AmmoHud : Singleton<AmmoHud>
 	/// </summary>
 	public Vector2 CellDirection = Vector2.left;
 
-	public PlayerShoot ShootScript;
+	private PlayerShoot _shootScript;
+
+	private void Start()
+	{
+		_shootScript = PlayerMovement.instance.gameObject.GetComponent<PlayerShoot>();
+	}
 
 	public void UpdateAmmoDisplay()
 	{
@@ -33,16 +38,16 @@ public class AmmoHud : Singleton<AmmoHud>
 		}
 
 		int index = 0;
-		for (; index < ShootScript.ammo; index++)
+		for (; index < _shootScript.ammo; index++)
 		{
 			SpawnAmmo(index, LoadedColor);
 		}
-		for (; index < ShootScript.maxAmmo; index++)
+		for (; index < _shootScript.maxAmmo; index++)
 		{
 			SpawnAmmo(index, DepletedColor);
 		}
 
-		ReloadHintText.SetActive(ShootScript.ammo == 0);
+		ReloadHintText.SetActive(_shootScript.ammo == 0);
 	}
 
 	private void SpawnAmmo(int index, Color cellColor)
