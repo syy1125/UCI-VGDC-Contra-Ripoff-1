@@ -122,12 +122,12 @@ Prefab:
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 329
+      value: 327
       objectReference: {fileID: 0}
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 185
+      value: 184
       objectReference: {fileID: 0}
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
@@ -224,6 +224,11 @@ Prefab:
       propertyPath: Health
       value: 
       objectReference: {fileID: 2082183081}
+    - target: {fileID: 114037164731981214, guid: b87218de8a5e75345af86a5df0ae1357,
+        type: 2}
+      propertyPath: ShootScript
+      value: 
+      objectReference: {fileID: 2082183084}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b87218de8a5e75345af86a5df0ae1357, type: 2}
   m_IsPrefabParent: 0
@@ -833,7 +838,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2082183081}
-        m_MethodName: OnDamage
+        m_MethodName: OnReceiveDamage
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -876,6 +881,12 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 50842431648521534, guid: 8e0762839b0aa80419a666c22c8f799d,
     type: 2}
   m_PrefabInternal: {fileID: 1673791043}
+--- !u!114 &2082183084 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114241984033030202, guid: 8e0762839b0aa80419a666c22c8f799d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1673791043}
+  m_Script: {fileID: 11500000, guid: 316f3462fb25013409f51ff028d73865, type: 3}
 --- !u!1 &2137231777
 GameObject:
   m_ObjectHideFlags: 0
