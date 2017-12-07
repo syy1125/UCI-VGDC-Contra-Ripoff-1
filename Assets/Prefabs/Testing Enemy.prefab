@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50156304194450642}
   - component: {fileID: 114333509456201388}
   m_Layer: 0
-  m_Name: Temp Non-Moving Enemy
+  m_Name: Testing Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6a3ef26390de34289019cdb2f3442a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseHealth: 1
+  MaxHealth: 20
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212794856367993038
 SpriteRenderer:
   m_ObjectHideFlags: 1

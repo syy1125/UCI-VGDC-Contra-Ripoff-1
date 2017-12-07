@@ -9,47 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1790736915327534}
+  m_RootGameObject: {fileID: 1199100343853460}
   m_IsPrefabParent: 1
---- !u!1 &1790736915327534
+--- !u!1 &1199100343853460
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4134283286398982}
-  - component: {fileID: 212794856367993038}
-  - component: {fileID: 61007536808297104}
-  - component: {fileID: 50156304194450642}
-  - component: {fileID: 114963686108192222}
+  - component: {fileID: 4017185527043674}
+  - component: {fileID: 212813550697163206}
+  - component: {fileID: 61882277802593130}
+  - component: {fileID: 50353364669464762}
+  - component: {fileID: 114697179958579206}
+  - component: {fileID: 114881431656655024}
   m_Layer: 0
-  m_Name: Temp Approaching Enemy
+  m_Name: Shooting Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4134283286398982
+--- !u!4 &4017185527043674
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790736915327534}
+  m_GameObject: {fileID: 1199100343853460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -0.566, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50156304194450642
+--- !u!50 &50353364669464762
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790736915327534}
+  m_GameObject: {fileID: 1199100343853460}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -61,14 +62,14 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61007536808297104
+--- !u!61 &61882277802593130
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790736915327534}
+  m_GameObject: {fileID: 1199100343853460}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -88,49 +89,57 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &114963686108192222
+--- !u!114 &114697179958579206
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790736915327534}
+  m_GameObject: {fileID: 1199100343853460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85b6c1ec6c10cbe4c86e93c89ae09361, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d6a3ef26390de34289019cdb2f3442a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 1
-  GroundMask:
-    serializedVersion: 2
-    m_Bits: 256
-  PlatformDetectorMask:
-    serializedVersion: 2
-    m_Bits: 0
-  DefaultLayer:
-    value: 0
-  IgnorePlatformLayer:
-    value: 11
-  MoveThreshold: 0.1
+  MaxHealth: 3
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthChangeEventEmitter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114881431656655024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199100343853460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac001cde29f47504aaafff8e873eacd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Floor: {fileID: 0}
-  FloorMask:
-    serializedVersion: 2
-    m_Bits: 0
-  FloorLayerUsed: 0
-  jumpForce: 300
-  jumpingTolerance: 1
-  timeBetweenJumps: 3
-  fallTolerance: 2
-  SafeToJumpDetectionDistance: 1.6
-  FallDetectionDistance: 10
-  currentGroundYScale: 0.2
-  jumpCooldown: 0
---- !u!212 &212794856367993038
+  ProjectilePrefab: {fileID: 1588932413359308, guid: addcfee05b9b420448ca7260a7c78c99,
+    type: 2}
+  FireInterval: 2
+  ProjectileSpeed: 1
+  PredictiveAim: 3
+  FiringArc: 30
+--- !u!212 &212813550697163206
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790736915327534}
+  m_GameObject: {fileID: 1199100343853460}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

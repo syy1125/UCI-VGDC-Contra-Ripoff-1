@@ -563,12 +563,12 @@ Prefab:
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 327
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 184
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 224621952161504050, guid: b87218de8a5e75345af86a5df0ae1357,
         type: 2}
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 1537056302}
   - component: {fileID: 1537056300}
   - component: {fileID: 1537056303}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CameraLockTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,9 +1198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0172737a2d7c154b95fd180a558e88f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ToPanTo: {x: 4, y: 1, z: 0}
-  mainCamera: {fileID: 0}
-  cam: {fileID: 0}
 --- !u!61 &1537056300
 BoxCollider2D:
   m_ObjectHideFlags: 0

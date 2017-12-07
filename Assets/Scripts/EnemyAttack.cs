@@ -23,13 +23,14 @@ public class EnemyAttack : MonoBehaviour
 	/// </summary>
 	public float FiringArc = 30;
 
-	private void Reset()
+	void Reset()
 	{
-		Player = GameObject.FindGameObjectWithTag("Player");
+		Player = PlayerMovement.instance;
 	}
 
-	private void Start()
+	void Start()
 	{
+		Reset ();
 		_fireCooldown = 0;
 		_playerTransformDerivatives = new Vector2[PredictiveAim + 1];
 	}
