@@ -502,6 +502,16 @@ Prefab:
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UpdateHealthDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 114274274156847596, guid: 8e0762839b0aa80419a666c22c8f799d,
+        type: 2}
+      propertyPath: MovementSpeed
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114028009548383146, guid: 8e0762839b0aa80419a666c22c8f799d,
+        type: 2}
+      propertyPath: MaxHealth
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
   m_IsPrefabParent: 0

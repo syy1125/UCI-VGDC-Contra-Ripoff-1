@@ -149,6 +149,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  KnockbackResistance: 1
 --- !u!1001 &101703468
 Prefab:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4689732395866084, guid: 89cb42a5f6147ba42b72d35298147209, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4689732395866084, guid: 89cb42a5f6147ba42b72d35298147209, type: 2}
       propertyPath: m_LocalPosition.z
@@ -357,12 +358,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b87218de8a5e75345af86a5df0ae1357, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &192211631 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114789976719350738, guid: b87218de8a5e75345af86a5df0ae1357,
-    type: 2}
-  m_PrefabInternal: {fileID: 192211630}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &192211632 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114649170604468354, guid: b87218de8a5e75345af86a5df0ae1357,
@@ -557,6 +552,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  KnockbackResistance: 1
 --- !u!1 &980667212
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,11 +946,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114028009548383146, guid: 8e0762839b0aa80419a666c22c8f799d,
-        type: 2}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4238668706006566, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -992,36 +983,6 @@ Prefab:
       propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 192211632}
-    - target: {fileID: 114241984033030202, guid: 8e0762839b0aa80419a666c22c8f799d,
-        type: 2}
-      propertyPath: ammocount
-      value: 
-      objectReference: {fileID: 192211631}
-    - target: {fileID: 114028009548383146, guid: 8e0762839b0aa80419a666c22c8f799d,
-        type: 2}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114028009548383146, guid: 8e0762839b0aa80419a666c22c8f799d,
-        type: 2}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114028009548383146, guid: 8e0762839b0aa80419a666c22c8f799d,
-        type: 2}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateHealthDisplay
-      objectReference: {fileID: 0}
-    - target: {fileID: 114028009548383146, guid: 8e0762839b0aa80419a666c22c8f799d,
-        type: 2}
-      propertyPath: OnHealthChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114028009548383146, guid: 8e0762839b0aa80419a666c22c8f799d,
-        type: 2}
-      propertyPath: MaxHealth
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e0762839b0aa80419a666c22c8f799d, type: 2}
   m_IsPrefabParent: 0
@@ -1053,8 +1014,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1766884433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.207499, y: 0.63155866, z: -0.052734375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.207499, y: 0, z: -0.052734375}
+  m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_Children:
   - {fileID: 2040623645}
   m_Father: {fileID: 0}
@@ -1097,6 +1058,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  KnockbackResistance: 1
 --- !u!4 &2040623645 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4689732395866084, guid: 89cb42a5f6147ba42b72d35298147209,
