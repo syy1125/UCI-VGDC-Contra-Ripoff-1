@@ -4,6 +4,8 @@
 /// </summary>
 public class EnemyHealth : AbstractHealth
 {
+	public float KnockbackResistance = 1;
+
 	protected override void OnDeath()
 	{
 		ScoreHud.Instance.SetScore (10);

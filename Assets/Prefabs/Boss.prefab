@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141434713633174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.04, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  KnockbackResistance: 0.3
 --- !u!114 &114974039584064996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b6c1ec6c10cbe4c86e93c89ae09361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 0.4
+  MovementSpeed: 0.8
   GroundMask:
     serializedVersion: 2
     m_Bits: 1792
@@ -137,7 +138,7 @@ MonoBehaviour:
   DefaultLayer:
     value: 0
   IgnorePlatformLayer:
-    value: 0
+    value: 11
   MoveThreshold: 0.1
   Player: {fileID: 0}
   Floor: {fileID: 0}
@@ -145,9 +146,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   FloorLayerUsed: 1
-  jumpForce: 250
-  jumpingTolerance: 10
-  timeBetweenJumps: 3
+  jumpForce: 300
+  jumpingTolerance: 200
+  timeBetweenJumps: 0
   fallTolerance: 2
   SafeToJumpDetectionDistance: 1.6
   FallDetectionDistance: 10

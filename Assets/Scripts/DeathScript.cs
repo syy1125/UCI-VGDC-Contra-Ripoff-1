@@ -13,7 +13,8 @@ public class DeathScript : Singleton<DeathScript>
 		{
 			t.gameObject.SetActive(true);
 		}
-		Time.timeScale = 0;
+		PlayerMovement.instance.GetComponent<PlayerMovement> ().removePlayerControl ();
+		//Time.timeScale = 0;
 	}
 
 	public void Restart()

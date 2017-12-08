@@ -117,11 +117,13 @@ public class PlayerMovement : AbstractMovement
 	public void removePlayerControl()
 	{
 		hasControl = false;
+		gameObject.GetComponent<PlayerShoot> ().RemoveShootingControl ();
 	}
 
 	public void returnPlayerControl()
 	{
 		hasControl = true;
+		gameObject.GetComponent<PlayerShoot> ().ReturnShootingControl ();
 	}
 
 	public void stopPlayer()

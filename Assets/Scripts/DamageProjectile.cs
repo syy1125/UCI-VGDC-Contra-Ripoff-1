@@ -57,16 +57,20 @@ public class DamageProjectile : MonoBehaviour
 		//Debug.Log (gameObject.GetComponent<CircleCollider2D>().bounds.center);
 		Vector2 knockbackDirection = target.GetComponent<BoxCollider2D>().bounds.ClosestPoint(this.gameObject.transform.position) - gameObject.GetComponent<CircleCollider2D>().bounds.center;
 		//Debug.Log (knockbackDirection.normalized);
-		if (target.CompareTag ("Player")) 
+		if (target.CompareTag ("Player"))
 		{
 			PlayerMovement p = target.GetComponent<PlayerMovement> ();
 			p.stopPlayer ();
 			p.removePlayerControl ();
 			target.GetComponent<Rigidbody2D> ().AddForce (knockbackDirection.normalized * KnockbackBaseStrength, ForceMode2D.Impulse);
 			StartCoroutine (ReturnPlayerControl (p));
+		} else 
+		{
+			if(target.GetComponent<EnemyHealth>() == null)
+				target.GetComponent<Rigidbody2D> ().AddForce (knockbackDirection.normalized * KnockbackBaseStrength, ForceMode2D.Impulse);
+			else
+				target.GetComponent<Rigidbody2D> ().AddForce (knockbackDirection.normalized * KnockbackBaseStrength * target.GetComponent<EnemyHealth>().KnockbackResistance, ForceMode2D.Impulse);
 		}
-		else
-			target.GetComponent<Rigidbody2D> ().AddForce (knockbackDirection.normalized * KnockbackBaseStrength, ForceMode2D.Impulse);
 
 		//Vector2 knockbackForce = (velocity + (Vector2) Vector3.Project(velocity, knockbackDirection)) * KnockbackBaseStrength;
 		//target.GetComponent<Rigidbody2D>().AddForce(knockbackForce);

@@ -11,18 +11,22 @@ public class PlayerShoot : MonoBehaviour {
 	public int maxAmmo = 6;
     public GameObject Projectile;
 	public int timer = 1;
-	private bool reload_now = false;
 
+	private bool reload_now = false;
+	private bool CanShoot;
 
 	// Use this for initialization
 	void Start () 
 	{
 		ammo = maxAmmo;
 		AmmoHud.Instance.UpdateAmmoDisplay();
+		CanShoot = true;
 	}
 
     // Update is called once per frame
 	void Update(){
+		if (!CanShoot)
+			return;
 		//if (ammo > 0) {
 			//ammocount.color = Color.white;
 			//ammocount.text = ammo.ToString ();
@@ -65,5 +69,14 @@ public class PlayerShoot : MonoBehaviour {
 		ammo = maxAmmo;
 		reload_now = false;
 		AmmoHud.Instance.UpdateAmmoDisplay();
+	}
+
+	public void RemoveShootingControl()
+	{
+		CanShoot = false;
+	}
+	public void ReturnShootingControl()
+	{
+		CanShoot = true;
 	}
 }
