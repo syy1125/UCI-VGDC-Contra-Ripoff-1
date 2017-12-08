@@ -24,11 +24,22 @@ public class AmmoHud : Singleton<AmmoHud>
 
 	private void Start()
 	{
-		_shootScript = PlayerMovement.instance.gameObject.GetComponent<PlayerShoot>();
+		UpdateAmmoDisplay ();
+		//if(PlayerMovement.instance != null)
+		//	_shootScript = PlayerMovement.instance.gameObject.GetComponent<PlayerShoot>();
 	}
 
 	public void UpdateAmmoDisplay()
 	{
+		if (_shootScript == null) {
+			if (PlayerMovement.instance != null)
+			{
+				_shootScript = PlayerMovement.instance.gameObject.GetComponent<PlayerShoot> ();
+			}
+			else
+				return;
+		}
+
 		foreach (Transform child in transform)
 		{
 			if (child.gameObject != ReloadHintText)

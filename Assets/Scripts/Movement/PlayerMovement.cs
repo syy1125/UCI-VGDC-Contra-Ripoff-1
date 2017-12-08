@@ -20,6 +20,7 @@ public class PlayerMovement : AbstractMovement
 	{
 		Reset();
 		base.Start();
+		AmmoHud.Instance.UpdateAmmoDisplay ();
 	}
 
 	protected override void Reset()
