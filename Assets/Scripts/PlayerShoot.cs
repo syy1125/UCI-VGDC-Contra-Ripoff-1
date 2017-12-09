@@ -38,13 +38,13 @@ public class PlayerShoot : MonoBehaviour {
         {
 			shootBullet ();
         }
-		if (Input.GetMouseButtonDown(1) || ammo == 0)
+		if (Input.GetMouseButtonDown(1) || ammo == 0 && ! reload_now)
         {
 			reload_now = true;
 			StartCoroutine(reload_time());
 		}
-		if (Input.GetKeyDown(KeyCode.R))
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		//if (Input.GetKeyDown(KeyCode.R))
+		//	SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void shootBullet()
