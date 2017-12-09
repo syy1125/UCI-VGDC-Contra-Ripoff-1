@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour {
 
     public Transform firePoint;
     public int ammo;
-	public int maxAmmo = 6;
+	public int maxAmmo = 5;
     public GameObject Projectile;
 	public int timer = 1;
 
@@ -38,7 +38,7 @@ public class PlayerShoot : MonoBehaviour {
         {
 			shootBullet ();
         }
-        if (Input.GetMouseButtonDown(1))
+		if (Input.GetMouseButtonDown(1) || ammo == 0)
         {
 			reload_now = true;
 			StartCoroutine(reload_time());

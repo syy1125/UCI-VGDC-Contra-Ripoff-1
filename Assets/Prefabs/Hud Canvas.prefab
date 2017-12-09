@@ -254,7 +254,6 @@ MonoBehaviour:
   ReloadHintText: {fileID: 1364002821929468}
   CellStart: {x: -0.5, y: 0.5}
   CellDirection: {x: -1, y: 0}
-  ShootScript: {fileID: 0}
 --- !u!114 &114055176908751102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,10 +356,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 8
     m_AlignByGeometry: 0
@@ -368,7 +367,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Right click to reload.
+  m_Text: Reloading...
 --- !u!114 &114543244743540248
 MonoBehaviour:
   m_ObjectHideFlags: 1
