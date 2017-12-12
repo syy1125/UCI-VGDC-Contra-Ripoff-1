@@ -116,6 +116,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  KnockbackResistance: 1
 --- !u!114 &114881431656655024
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50387098981211318}
   - component: {fileID: 114974039584064996}
   - component: {fileID: 114089621755442584}
+  - component: {fileID: 114367915336737160}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -117,6 +118,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   KnockbackResistance: 0.3
+--- !u!114 &114367915336737160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141434713633174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7fcb11907b5f54097e32fbea4bc276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+  KnockbackBaseStrength: 1.81
 --- !u!114 &114974039584064996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +153,7 @@ MonoBehaviour:
     value: 0
   IgnorePlatformLayer:
     value: 11
+  PrintDebugInformation: 0
   MoveThreshold: 0.1
   Player: {fileID: 0}
   Floor: {fileID: 0}
@@ -146,7 +161,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   FloorLayerUsed: 1
-  jumpForce: 300
+  jumpForce: 150
   jumpingTolerance: 200
   timeBetweenJumps: 0
   fallTolerance: 2

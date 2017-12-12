@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class EnemyMovement : AbstractMovement
 {
+	public bool PrintDebugInformation = false;
 	public float MoveThreshold;
 	public GameObject Player;
 	public Collider2D Floor;
@@ -89,7 +90,8 @@ public class EnemyMovement : AbstractMovement
 			newXvelocity = 0;
 		}
 
-		Debug.Log(name + ": x velocity = " + newXvelocity);
+		if (PrintDebugInformation)
+			Debug.Log(name + ": x velocity = " + newXvelocity);
 		return newXvelocity;
 	}
 
@@ -221,7 +223,9 @@ public class EnemyMovement : AbstractMovement
 			jump = false;
 		if (!IsSafeToChangePlatforms(transform.position + transform.up.normalized * ((transform.lossyScale.y / 2.0f) * 0.18f), transform.up.normalized, SafeToJumpDetectionDistance))
 			jump = false;
-		Debug.Log(name + ": safe to jump? = " + jump);
+
+		if (PrintDebugInformation)
+			Debug.Log(name + ": safe to jump? = " + jump);
 		return jump;
 	}
 
@@ -229,7 +233,8 @@ public class EnemyMovement : AbstractMovement
 	{
 		if (!IsGrounded())
 		{
-			Debug.Log(name + " was not grounded.");
+			if (PrintDebugInformation)
+				Debug.Log(name + " was not grounded.");
 			return false;
 		}
 		Jump();
@@ -271,7 +276,8 @@ public class EnemyMovement : AbstractMovement
 			}
 		}
 
-		Debug.Log(name + ": will fall? = " + fall);
+		if (PrintDebugInformation)
+			Debug.Log(name + ": will fall? = " + fall);
 		return fall;
 	}
 
@@ -292,14 +298,16 @@ public class EnemyMovement : AbstractMovement
 		RaycastHit2D hitEnemy = Physics2D.Raycast(rayOrigin, rayDir, rayDistance, 1 << gameObject.layer);
 		if (hitEnemy.collider != null && !hitEnemy.collider.name.Equals("Player"))
 		{
-			Debug.Log(name + ": detected enemy = " + hitEnemy.collider.name);
+			if (PrintDebugInformation)
+				Debug.Log(name + ": detected enemy = " + hitEnemy.collider.name);
 			if (IsGrounded())
 				Rb.velocity = new Vector2(0.0f, Rb.velocity.y);
 			safe = false;
 		}
 
 		// there is a platform to land on, and no enemies are in the way, so it is safe to move to another platform
-		Debug.Log(name + ": safe to change platforms? = " + safe);
+		if (PrintDebugInformation)
+			Debug.Log(name + ": safe to change platforms? = " + safe);
 		return safe;
 	}
 
