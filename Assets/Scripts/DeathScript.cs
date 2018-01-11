@@ -14,7 +14,7 @@ public class DeathScript : Singleton<DeathScript>
 			t.gameObject.SetActive(true);
 		}
 		PlayerMovement.instance.GetComponent<PlayerMovement> ().removePlayerControl ();
-		//Time.timeScale = 0;
+		Time.timeScale = 0;
 	}
 
 	public void Restart()

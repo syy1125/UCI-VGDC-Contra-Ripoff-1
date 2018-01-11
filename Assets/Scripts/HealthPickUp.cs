@@ -18,6 +18,8 @@ public class HealthPickUp : MonoBehaviour {
 
 		if (collision.collider.name.Equals("Player"))
 		{
+			PlayerHealth temp = PlayerMovement.instance.gameObject.GetComponent<PlayerHealth>();
+			temp.Heal(this.gameObject, temp.MaxHealth - temp.getCurrentHealth());
 			gameObject.SetActive(false);
 		}
 	}

@@ -60,5 +60,10 @@ public abstract class AbstractHealth : MonoBehaviour
 		}
 	}
 
+	public int getCurrentHealth()
+	{
+		return _health;
+	}
+
 	protected abstract void OnDeath();
 }

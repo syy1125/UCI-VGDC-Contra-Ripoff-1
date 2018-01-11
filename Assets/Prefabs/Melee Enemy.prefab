@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  KnockbackBaseStrength: 1.81
+  KnockbackBaseStrength: 3
 --- !u!114 &114777815888141786
 MonoBehaviour:
   m_ObjectHideFlags: 1
